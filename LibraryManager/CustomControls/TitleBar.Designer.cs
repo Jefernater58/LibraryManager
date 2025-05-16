@@ -45,7 +45,7 @@
             minimiseButton.Margin = new Padding(0);
             minimiseButton.Name = "minimiseButton";
             minimiseButton.Size = new Size(46, 32);
-            minimiseButton.TabIndex = 12;
+            minimiseButton.TabIndex = 98;
             minimiseButton.Text = "";
             minimiseButton.UseVisualStyleBackColor = true;
             minimiseButton.Click += minimiseButton_click;
@@ -79,7 +79,7 @@
             closeButton.Margin = new Padding(0);
             closeButton.Name = "closeButton";
             closeButton.Size = new Size(46, 32);
-            closeButton.TabIndex = 10;
+            closeButton.TabIndex = 99;
             closeButton.Text = "";
             closeButton.UseVisualStyleBackColor = true;
             closeButton.Click += closeButton_click;

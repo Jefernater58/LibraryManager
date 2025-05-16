@@ -38,7 +38,7 @@
             titleBar.Margin = new Padding(0);
             titleBar.Name = "titleBar";
             titleBar.Size = new Size(800, 32);
-            titleBar.TabIndex = 0;
+            titleBar.TabIndex = 99;
             titleBar.Title = "Library Manager";
             // 
             // MainForm
@@ -50,6 +50,7 @@
             Controls.Add(titleBar);
             FormBorderStyle = FormBorderStyle.None;
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             ResumeLayout(false);
         }

@@ -54,7 +54,7 @@
             usernameTextBox.Name = "usernameTextBox";
             usernameTextBox.PasswordChar = '\0';
             usernameTextBox.Size = new Size(300, 36);
-            usernameTextBox.TabIndex = 1;
+            usernameTextBox.TabIndex = 0;
             usernameTextBox.TextBoxPlaceholder = "Username";
             usernameTextBox.TextBoxText = "";
             // 
@@ -66,7 +66,7 @@
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.PasswordChar = '•';
             passwordTextBox.Size = new Size(300, 36);
-            passwordTextBox.TabIndex = 2;
+            passwordTextBox.TabIndex = 1;
             passwordTextBox.TextBoxPlaceholder = "Password";
             passwordTextBox.TextBoxText = "";
             // 
@@ -82,7 +82,7 @@
             loginButton.Location = new Point(250, 228);
             loginButton.Name = "loginButton";
             loginButton.Size = new Size(300, 36);
-            loginButton.TabIndex = 3;
+            loginButton.TabIndex = 2;
             loginButton.Text = "LOGIN";
             loginButton.UseVisualStyleBackColor = false;
             loginButton.Click += loginButton_Click;
