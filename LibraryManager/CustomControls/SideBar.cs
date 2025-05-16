@@ -76,7 +76,34 @@ namespace LibraryManager.CustomControls
 
         private void searchStudentsButton_Click(object sender, EventArgs e)
         {
-            //parentForm.openPage(new Pages.SearchStudents(), "Search Students");
+            parentForm.openPage(new Pages.SearchStudents(), "Search for students");
+        }
+
+        private void searchBooksButton_Click(object sender, EventArgs e)
+        {
+            parentForm.openPage(new Pages.SearchBooks(), "Search for books");
+        }
+
+        private void checkInOutButton_Click(object sender, EventArgs e)
+        {
+            parentForm.openPage(new Pages.CheckInOut(), "Check in/out books");
+        }
+
+        private void editInventoryButton_Click(object sender, EventArgs e)
+        {
+            parentForm.openPage(new Pages.EditInventory(), "Edit Inventory");
+        }
+
+        private void editStudentsButton_Click(object sender, EventArgs e)
+        {
+            // TODO: make sure the user is admin from database before opening this page
+            parentForm.openPage(new Pages.EditStudents(), "Edit Students");
+        }
+
+        private void editUsersButton_Click(object sender, EventArgs e)
+        {
+            // TODO: make sure the user is admin from database before opening this page
+            parentForm.openPage(new Pages.EditUsers(), "Edit Users");
         }
     }
 }

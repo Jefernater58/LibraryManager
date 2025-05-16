@@ -124,6 +124,7 @@
             // editStudentsButton
             // 
             editStudentsButton.FlatAppearance.BorderSize = 0;
+            editStudentsButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 44, 54);
             editStudentsButton.FlatStyle = FlatStyle.Flat;
             editStudentsButton.ForeColor = Color.White;
             editStudentsButton.Location = new Point(31, 314);
@@ -133,10 +134,12 @@
             editStudentsButton.Text = "Edit students (admin)";
             editStudentsButton.TextAlign = ContentAlignment.MiddleLeft;
             editStudentsButton.UseVisualStyleBackColor = true;
+            editStudentsButton.Click += editStudentsButton_Click;
             // 
             // editUsersButton
             // 
             editUsersButton.FlatAppearance.BorderSize = 0;
+            editUsersButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 44, 54);
             editUsersButton.FlatStyle = FlatStyle.Flat;
             editUsersButton.ForeColor = Color.White;
             editUsersButton.Location = new Point(31, 356);
@@ -146,10 +149,12 @@
             editUsersButton.Text = "Edit users (admin)";
             editUsersButton.TextAlign = ContentAlignment.MiddleLeft;
             editUsersButton.UseVisualStyleBackColor = true;
+            editUsersButton.Click += editUsersButton_Click;
             // 
             // editInventoryButton
             // 
             editInventoryButton.FlatAppearance.BorderSize = 0;
+            editInventoryButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 44, 54);
             editInventoryButton.FlatStyle = FlatStyle.Flat;
             editInventoryButton.ForeColor = Color.White;
             editInventoryButton.Location = new Point(31, 168);
@@ -159,10 +164,12 @@
             editInventoryButton.Text = "Edit inventory";
             editInventoryButton.TextAlign = ContentAlignment.MiddleLeft;
             editInventoryButton.UseVisualStyleBackColor = true;
+            editInventoryButton.Click += editInventoryButton_Click;
             // 
             // checkInOutButton
             // 
             checkInOutButton.FlatAppearance.BorderSize = 0;
+            checkInOutButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 44, 54);
             checkInOutButton.FlatStyle = FlatStyle.Flat;
             checkInOutButton.ForeColor = Color.White;
             checkInOutButton.Location = new Point(31, 126);
@@ -172,10 +179,12 @@
             checkInOutButton.Text = "Check in/out books";
             checkInOutButton.TextAlign = ContentAlignment.MiddleLeft;
             checkInOutButton.UseVisualStyleBackColor = true;
+            checkInOutButton.Click += checkInOutButton_Click;
             // 
             // searchBooksButton
             // 
             searchBooksButton.FlatAppearance.BorderSize = 0;
+            searchBooksButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 44, 54);
             searchBooksButton.FlatStyle = FlatStyle.Flat;
             searchBooksButton.ForeColor = Color.White;
             searchBooksButton.Location = new Point(31, 84);
@@ -185,10 +194,12 @@
             searchBooksButton.Text = "Search for books";
             searchBooksButton.TextAlign = ContentAlignment.MiddleLeft;
             searchBooksButton.UseVisualStyleBackColor = true;
+            searchBooksButton.Click += searchBooksButton_Click;
             // 
             // searchStudentsButton
             // 
             searchStudentsButton.FlatAppearance.BorderSize = 0;
+            searchStudentsButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 44, 54);
             searchStudentsButton.FlatStyle = FlatStyle.Flat;
             searchStudentsButton.ForeColor = Color.White;
             searchStudentsButton.Location = new Point(31, 42);
@@ -203,6 +214,7 @@
             // homeButton
             // 
             homeButton.FlatAppearance.BorderSize = 0;
+            homeButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 44, 54);
             homeButton.FlatStyle = FlatStyle.Flat;
             homeButton.ForeColor = Color.White;
             homeButton.Location = new Point(31, 0);

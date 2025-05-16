@@ -1,8 +1,8 @@
 ﻿namespace LibraryManager.Pages
 {
-    public partial class Home : UserControl
+    public partial class EditUsers : UserControl
     {
-        public Home()
+        public EditUsers()
         {
             InitializeComponent();
         }
