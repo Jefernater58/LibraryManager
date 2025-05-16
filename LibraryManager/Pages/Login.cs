@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace LibraryManager.Pages
+﻿namespace LibraryManager.Pages
 {
     public partial class Login : UserControl
     {
@@ -12,7 +10,7 @@ namespace LibraryManager.Pages
         }
 
         // get the parent form of the control, when it loads, so that we can change the page
-        protected override void OnParentChanged(EventArgs e)
+        protected override void OnLoad(EventArgs e)
         {
             base.OnParentChanged(e);
             parentForm = (MainForm)FindForm();
@@ -41,7 +39,7 @@ namespace LibraryManager.Pages
             }
             else
             {
-                Debug.WriteLine("Unexpected error: textbox value is null");
+                throw new Exception("An unexpected error occurred, username and password must not be null.");
             }
         }
     }

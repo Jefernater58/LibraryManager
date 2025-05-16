@@ -1,0 +1,259 @@
+﻿namespace LibraryManager.CustomControls
+{
+    partial class SideBar
+    {
+        /// <summary> 
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary> 
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Component Designer generated code
+
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            editStudentsIcon = new Label();
+            editUsersIcon = new Label();
+            editInventoryIcon = new Label();
+            checkInOutIcon = new Label();
+            searchBooksIcon = new Label();
+            searchStudentsIcon = new Label();
+            homeIcon = new Label();
+            editStudentsButton = new Button();
+            editUsersButton = new Button();
+            editInventoryButton = new Button();
+            checkInOutButton = new Button();
+            searchBooksButton = new Button();
+            searchStudentsButton = new Button();
+            homeButton = new Button();
+            SuspendLayout();
+            // 
+            // editStudentsIcon
+            // 
+            editStudentsIcon.AutoSize = true;
+            editStudentsIcon.Font = new Font("Segoe Fluent Icons", 15F);
+            editStudentsIcon.ForeColor = Color.White;
+            editStudentsIcon.Location = new Point(2, 325);
+            editStudentsIcon.Name = "editStudentsIcon";
+            editStudentsIcon.Size = new Size(29, 20);
+            editStudentsIcon.TabIndex = 9;
+            editStudentsIcon.Text = "";
+            // 
+            // editUsersIcon
+            // 
+            editUsersIcon.AutoSize = true;
+            editUsersIcon.Font = new Font("Segoe Fluent Icons", 15F);
+            editUsersIcon.ForeColor = Color.White;
+            editUsersIcon.Location = new Point(2, 367);
+            editUsersIcon.Name = "editUsersIcon";
+            editUsersIcon.Size = new Size(29, 20);
+            editUsersIcon.TabIndex = 10;
+            editUsersIcon.Text = "";
+            // 
+            // editInventoryIcon
+            // 
+            editInventoryIcon.AutoSize = true;
+            editInventoryIcon.Font = new Font("Segoe Fluent Icons", 15F);
+            editInventoryIcon.ForeColor = Color.White;
+            editInventoryIcon.Location = new Point(2, 179);
+            editInventoryIcon.Name = "editInventoryIcon";
+            editInventoryIcon.Size = new Size(29, 20);
+            editInventoryIcon.TabIndex = 11;
+            editInventoryIcon.Text = "";
+            // 
+            // checkInOutIcon
+            // 
+            checkInOutIcon.AutoSize = true;
+            checkInOutIcon.Font = new Font("Segoe Fluent Icons", 15F);
+            checkInOutIcon.ForeColor = Color.White;
+            checkInOutIcon.Location = new Point(2, 137);
+            checkInOutIcon.Name = "checkInOutIcon";
+            checkInOutIcon.Size = new Size(29, 20);
+            checkInOutIcon.TabIndex = 12;
+            checkInOutIcon.Text = "";
+            // 
+            // searchBooksIcon
+            // 
+            searchBooksIcon.AutoSize = true;
+            searchBooksIcon.Font = new Font("Segoe Fluent Icons", 15F);
+            searchBooksIcon.ForeColor = Color.White;
+            searchBooksIcon.Location = new Point(2, 95);
+            searchBooksIcon.Name = "searchBooksIcon";
+            searchBooksIcon.Size = new Size(29, 20);
+            searchBooksIcon.TabIndex = 13;
+            searchBooksIcon.Text = "";
+            // 
+            // searchStudentsIcon
+            // 
+            searchStudentsIcon.AutoSize = true;
+            searchStudentsIcon.Font = new Font("Segoe Fluent Icons", 15F);
+            searchStudentsIcon.ForeColor = Color.White;
+            searchStudentsIcon.Location = new Point(2, 53);
+            searchStudentsIcon.Name = "searchStudentsIcon";
+            searchStudentsIcon.Size = new Size(29, 20);
+            searchStudentsIcon.TabIndex = 14;
+            searchStudentsIcon.Text = "";
+            // 
+            // homeIcon
+            // 
+            homeIcon.AutoSize = true;
+            homeIcon.Font = new Font("Segoe Fluent Icons", 15F);
+            homeIcon.ForeColor = Color.White;
+            homeIcon.Location = new Point(2, 11);
+            homeIcon.Name = "homeIcon";
+            homeIcon.Size = new Size(29, 20);
+            homeIcon.TabIndex = 15;
+            homeIcon.Text = "";
+            // 
+            // editStudentsButton
+            // 
+            editStudentsButton.FlatAppearance.BorderSize = 0;
+            editStudentsButton.FlatStyle = FlatStyle.Flat;
+            editStudentsButton.ForeColor = Color.White;
+            editStudentsButton.Location = new Point(31, 314);
+            editStudentsButton.Name = "editStudentsButton";
+            editStudentsButton.Size = new Size(166, 42);
+            editStudentsButton.TabIndex = 2;
+            editStudentsButton.Text = "Edit students (admin)";
+            editStudentsButton.TextAlign = ContentAlignment.MiddleLeft;
+            editStudentsButton.UseVisualStyleBackColor = true;
+            // 
+            // editUsersButton
+            // 
+            editUsersButton.FlatAppearance.BorderSize = 0;
+            editUsersButton.FlatStyle = FlatStyle.Flat;
+            editUsersButton.ForeColor = Color.White;
+            editUsersButton.Location = new Point(31, 356);
+            editUsersButton.Name = "editUsersButton";
+            editUsersButton.Size = new Size(166, 42);
+            editUsersButton.TabIndex = 3;
+            editUsersButton.Text = "Edit users (admin)";
+            editUsersButton.TextAlign = ContentAlignment.MiddleLeft;
+            editUsersButton.UseVisualStyleBackColor = true;
+            // 
+            // editInventoryButton
+            // 
+            editInventoryButton.FlatAppearance.BorderSize = 0;
+            editInventoryButton.FlatStyle = FlatStyle.Flat;
+            editInventoryButton.ForeColor = Color.White;
+            editInventoryButton.Location = new Point(31, 168);
+            editInventoryButton.Name = "editInventoryButton";
+            editInventoryButton.Size = new Size(166, 42);
+            editInventoryButton.TabIndex = 4;
+            editInventoryButton.Text = "Edit inventory";
+            editInventoryButton.TextAlign = ContentAlignment.MiddleLeft;
+            editInventoryButton.UseVisualStyleBackColor = true;
+            // 
+            // checkInOutButton
+            // 
+            checkInOutButton.FlatAppearance.BorderSize = 0;
+            checkInOutButton.FlatStyle = FlatStyle.Flat;
+            checkInOutButton.ForeColor = Color.White;
+            checkInOutButton.Location = new Point(31, 126);
+            checkInOutButton.Name = "checkInOutButton";
+            checkInOutButton.Size = new Size(166, 42);
+            checkInOutButton.TabIndex = 5;
+            checkInOutButton.Text = "Check in/out books";
+            checkInOutButton.TextAlign = ContentAlignment.MiddleLeft;
+            checkInOutButton.UseVisualStyleBackColor = true;
+            // 
+            // searchBooksButton
+            // 
+            searchBooksButton.FlatAppearance.BorderSize = 0;
+            searchBooksButton.FlatStyle = FlatStyle.Flat;
+            searchBooksButton.ForeColor = Color.White;
+            searchBooksButton.Location = new Point(31, 84);
+            searchBooksButton.Name = "searchBooksButton";
+            searchBooksButton.Size = new Size(166, 42);
+            searchBooksButton.TabIndex = 6;
+            searchBooksButton.Text = "Search for books";
+            searchBooksButton.TextAlign = ContentAlignment.MiddleLeft;
+            searchBooksButton.UseVisualStyleBackColor = true;
+            // 
+            // searchStudentsButton
+            // 
+            searchStudentsButton.FlatAppearance.BorderSize = 0;
+            searchStudentsButton.FlatStyle = FlatStyle.Flat;
+            searchStudentsButton.ForeColor = Color.White;
+            searchStudentsButton.Location = new Point(31, 42);
+            searchStudentsButton.Name = "searchStudentsButton";
+            searchStudentsButton.Size = new Size(166, 42);
+            searchStudentsButton.TabIndex = 7;
+            searchStudentsButton.Text = "Search for students";
+            searchStudentsButton.TextAlign = ContentAlignment.MiddleLeft;
+            searchStudentsButton.UseVisualStyleBackColor = true;
+            searchStudentsButton.Click += searchStudentsButton_Click;
+            // 
+            // homeButton
+            // 
+            homeButton.FlatAppearance.BorderSize = 0;
+            homeButton.FlatStyle = FlatStyle.Flat;
+            homeButton.ForeColor = Color.White;
+            homeButton.Location = new Point(31, 0);
+            homeButton.Name = "homeButton";
+            homeButton.Size = new Size(166, 42);
+            homeButton.TabIndex = 8;
+            homeButton.Text = "Home";
+            homeButton.TextAlign = ContentAlignment.MiddleLeft;
+            homeButton.UseVisualStyleBackColor = true;
+            homeButton.Click += homeButton_Click;
+            // 
+            // SideBar
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(38, 44, 54);
+            Controls.Add(editStudentsIcon);
+            Controls.Add(editUsersIcon);
+            Controls.Add(editInventoryIcon);
+            Controls.Add(checkInOutIcon);
+            Controls.Add(searchBooksIcon);
+            Controls.Add(searchStudentsIcon);
+            Controls.Add(homeIcon);
+            Controls.Add(editStudentsButton);
+            Controls.Add(editUsersButton);
+            Controls.Add(editInventoryButton);
+            Controls.Add(checkInOutButton);
+            Controls.Add(searchBooksButton);
+            Controls.Add(searchStudentsButton);
+            Controls.Add(homeButton);
+            Name = "SideBar";
+            Size = new Size(198, 398);
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private Label editStudentsIcon;
+        private Label editUsersIcon;
+        private Label editInventoryIcon;
+        private Label checkInOutIcon;
+        private Label searchBooksIcon;
+        private Label searchStudentsIcon;
+        private Label homeIcon;
+        private Button editStudentsButton;
+        private Button editUsersButton;
+        private Button editInventoryButton;
+        private Button checkInOutButton;
+        private Button searchBooksButton;
+        private Button searchStudentsButton;
+        private Button homeButton;
+    }
+}
