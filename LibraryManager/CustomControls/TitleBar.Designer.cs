@@ -99,7 +99,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(220, 224, 232);
+            BackColor = Color.FromArgb(239, 241, 245);
             Controls.Add(minimiseButton);
             Controls.Add(toggleButton);
             Controls.Add(closeButton);

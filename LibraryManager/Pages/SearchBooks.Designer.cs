@@ -32,19 +32,19 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             sideBar1 = new LibraryManager.CustomControls.SideBar();
             dataGrid = new DataGridView();
-            searchButton = new Button();
-            searchTextBox = new CustomTextBox();
             BookID = new DataGridViewTextBoxColumn();
             BookTitle = new DataGridViewTextBoxColumn();
             BookAuthor = new DataGridViewTextBoxColumn();
             BookRating = new DataGridViewTextBoxColumn();
             InLibrary = new DataGridViewCheckBoxColumn();
+            searchButton = new Button();
+            searchTextBox = new CustomTextBox();
             ((System.ComponentModel.ISupportInitialize)dataGrid).BeginInit();
             SuspendLayout();
             // 
             // sideBar1
             // 
-            sideBar1.BackColor = Color.FromArgb(38, 44, 54);
+            sideBar1.BackColor = Color.FromArgb(230, 233, 239);
             sideBar1.CurrentFormIndex = 2;
             sideBar1.Location = new Point(0, 0);
             sideBar1.Name = "sideBar1";
@@ -57,13 +57,13 @@
             dataGrid.AllowUserToDeleteRows = false;
             dataGrid.AllowUserToResizeColumns = false;
             dataGrid.AllowUserToResizeRows = false;
-            dataGrid.BackgroundColor = Color.FromArgb(51, 59, 71);
+            dataGrid.BackgroundColor = Color.FromArgb(230, 233, 239);
             dataGrid.BorderStyle = BorderStyle.None;
             dataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(51, 59, 71);
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(220, 224, 232);
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(76, 79, 105);
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
@@ -71,21 +71,62 @@
             dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGrid.Columns.AddRange(new DataGridViewColumn[] { BookID, BookTitle, BookAuthor, BookRating, InLibrary });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(38, 44, 54);
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(230, 233, 239);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(76, 79, 105);
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             dataGrid.EnableHeadersVisualStyles = false;
-            dataGrid.GridColor = Color.FromArgb(38, 44, 54);
+            dataGrid.GridColor = Color.FromArgb(230, 233, 239);
             dataGrid.Location = new Point(230, 100);
             dataGrid.Name = "dataGrid";
             dataGrid.ReadOnly = true;
             dataGrid.RowHeadersVisible = false;
             dataGrid.Size = new Size(536, 266);
             dataGrid.TabIndex = 8;
+            // 
+            // BookID
+            // 
+            BookID.HeaderText = "ID";
+            BookID.Name = "BookID";
+            BookID.ReadOnly = true;
+            BookID.Resizable = DataGridViewTriState.False;
+            BookID.Width = 48;
+            // 
+            // BookTitle
+            // 
+            BookTitle.HeaderText = "Title";
+            BookTitle.Name = "BookTitle";
+            BookTitle.ReadOnly = true;
+            BookTitle.Resizable = DataGridViewTriState.False;
+            BookTitle.Width = 171;
+            // 
+            // BookAuthor
+            // 
+            BookAuthor.HeaderText = "Author";
+            BookAuthor.Name = "BookAuthor";
+            BookAuthor.ReadOnly = true;
+            BookAuthor.Resizable = DataGridViewTriState.False;
+            BookAuthor.Width = 171;
+            // 
+            // BookRating
+            // 
+            BookRating.HeaderText = "Rating";
+            BookRating.Name = "BookRating";
+            BookRating.ReadOnly = true;
+            BookRating.Resizable = DataGridViewTriState.False;
+            BookRating.Width = 48;
+            // 
+            // InLibrary
+            // 
+            InLibrary.HeaderText = "In Library";
+            InLibrary.Name = "InLibrary";
+            InLibrary.ReadOnly = true;
+            InLibrary.Resizable = DataGridViewTriState.False;
+            InLibrary.SortMode = DataGridViewColumnSortMode.Automatic;
+            InLibrary.Width = 80;
             // 
             // searchButton
             // 
@@ -105,7 +146,7 @@
             // 
             // searchTextBox
             // 
-            searchTextBox.BackColor = Color.FromArgb(51, 59, 71);
+            searchTextBox.BackColor = Color.FromArgb(204, 208, 218);
             searchTextBox.IconText = "";
             searchTextBox.Location = new Point(230, 32);
             searchTextBox.Name = "searchTextBox";
@@ -115,52 +156,11 @@
             searchTextBox.TextBoxPlaceholder = "Enter search term...";
             searchTextBox.TextBoxText = "";
             // 
-            // BookID
-            // 
-            BookID.HeaderText = "ID";
-            BookID.Name = "BookID";
-            BookID.ReadOnly = true;
-            BookID.Resizable = DataGridViewTriState.False;
-            BookID.Width = 48;
-            // 
-            // BookTitle
-            // 
-            BookTitle.HeaderText = "Title";
-            BookTitle.Name = "BookTitle";
-            BookTitle.ReadOnly = true;
-            BookTitle.Resizable = DataGridViewTriState.False;
-            BookTitle.Width = 172;
-            // 
-            // BookAuthor
-            // 
-            BookAuthor.HeaderText = "Author";
-            BookAuthor.Name = "BookAuthor";
-            BookAuthor.ReadOnly = true;
-            BookAuthor.Resizable = DataGridViewTriState.False;
-            BookAuthor.Width = 172;
-            // 
-            // BookRating
-            // 
-            BookRating.HeaderText = "Rating";
-            BookRating.Name = "BookRating";
-            BookRating.ReadOnly = true;
-            BookRating.Resizable = DataGridViewTriState.False;
-            BookRating.Width = 48;
-            // 
-            // InLibrary
-            // 
-            InLibrary.HeaderText = "In Library";
-            InLibrary.Name = "InLibrary";
-            InLibrary.ReadOnly = true;
-            InLibrary.Resizable = DataGridViewTriState.False;
-            InLibrary.SortMode = DataGridViewColumnSortMode.Automatic;
-            InLibrary.Width = 80;
-            // 
             // SearchBooks
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(44, 49, 59);
+            BackColor = Color.FromArgb(239, 241, 245);
             Controls.Add(dataGrid);
             Controls.Add(searchButton);
             Controls.Add(searchTextBox);

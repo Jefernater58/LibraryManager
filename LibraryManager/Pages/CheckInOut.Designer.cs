@@ -40,7 +40,7 @@
             // 
             // sideBar1
             // 
-            sideBar1.BackColor = Color.FromArgb(38, 44, 54);
+            sideBar1.BackColor = Color.FromArgb(230, 233, 239);
             sideBar1.CurrentFormIndex = 3;
             sideBar1.Location = new Point(0, 0);
             sideBar1.Name = "sideBar1";
@@ -49,7 +49,7 @@
             // 
             // studentIDTextBox
             // 
-            studentIDTextBox.BackColor = Color.FromArgb(51, 59, 71);
+            studentIDTextBox.BackColor = Color.FromArgb(204, 208, 218);
             studentIDTextBox.IconText = "";
             studentIDTextBox.Location = new Point(345, 98);
             studentIDTextBox.Name = "studentIDTextBox";
@@ -61,7 +61,7 @@
             // 
             // bookIDTextBox
             // 
-            bookIDTextBox.BackColor = Color.FromArgb(51, 59, 71);
+            bookIDTextBox.BackColor = Color.FromArgb(204, 208, 218);
             bookIDTextBox.IconText = "";
             bookIDTextBox.Location = new Point(345, 154);
             bookIDTextBox.Name = "bookIDTextBox";
@@ -121,7 +121,7 @@
             // 
             alreadyCheckedInLabel.AutoSize = true;
             alreadyCheckedInLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            alreadyCheckedInLabel.ForeColor = Color.FromArgb(147, 42, 49);
+            alreadyCheckedInLabel.ForeColor = Color.FromArgb(210, 15, 57);
             alreadyCheckedInLabel.Location = new Point(393, 261);
             alreadyCheckedInLabel.Name = "alreadyCheckedInLabel";
             alreadyCheckedInLabel.Size = new Size(212, 15);
@@ -133,7 +133,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label1.ForeColor = Color.FromArgb(147, 42, 49);
+            label1.ForeColor = Color.FromArgb(210, 15, 57);
             label1.Location = new Point(384, 261);
             label1.Name = "label1";
             label1.Size = new Size(221, 15);
@@ -145,7 +145,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(44, 49, 59);
+            BackColor = Color.FromArgb(239, 241, 245);
             Controls.Add(label1);
             Controls.Add(alreadyCheckedInLabel);
             Controls.Add(successLabel);

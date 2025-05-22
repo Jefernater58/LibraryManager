@@ -48,7 +48,7 @@
             // 
             editStudentsIcon.AutoSize = true;
             editStudentsIcon.Font = new Font("Segoe Fluent Icons", 15F);
-            editStudentsIcon.ForeColor = Color.White;
+            editStudentsIcon.ForeColor = Color.FromArgb(92, 95, 119);
             editStudentsIcon.Location = new Point(2, 325);
             editStudentsIcon.Name = "editStudentsIcon";
             editStudentsIcon.Size = new Size(29, 20);
@@ -59,7 +59,7 @@
             // 
             editUsersIcon.AutoSize = true;
             editUsersIcon.Font = new Font("Segoe Fluent Icons", 15F);
-            editUsersIcon.ForeColor = Color.White;
+            editUsersIcon.ForeColor = Color.FromArgb(92, 95, 119);
             editUsersIcon.Location = new Point(2, 367);
             editUsersIcon.Name = "editUsersIcon";
             editUsersIcon.Size = new Size(29, 20);
@@ -70,7 +70,7 @@
             // 
             editInventoryIcon.AutoSize = true;
             editInventoryIcon.Font = new Font("Segoe Fluent Icons", 15F);
-            editInventoryIcon.ForeColor = Color.White;
+            editInventoryIcon.ForeColor = Color.FromArgb(92, 95, 119);
             editInventoryIcon.Location = new Point(2, 179);
             editInventoryIcon.Name = "editInventoryIcon";
             editInventoryIcon.Size = new Size(29, 20);
@@ -81,7 +81,7 @@
             // 
             checkInOutIcon.AutoSize = true;
             checkInOutIcon.Font = new Font("Segoe Fluent Icons", 15F);
-            checkInOutIcon.ForeColor = Color.White;
+            checkInOutIcon.ForeColor = Color.FromArgb(92, 95, 119);
             checkInOutIcon.Location = new Point(2, 137);
             checkInOutIcon.Name = "checkInOutIcon";
             checkInOutIcon.Size = new Size(29, 20);
@@ -92,7 +92,7 @@
             // 
             searchBooksIcon.AutoSize = true;
             searchBooksIcon.Font = new Font("Segoe Fluent Icons", 15F);
-            searchBooksIcon.ForeColor = Color.White;
+            searchBooksIcon.ForeColor = Color.FromArgb(92, 95, 119);
             searchBooksIcon.Location = new Point(2, 95);
             searchBooksIcon.Name = "searchBooksIcon";
             searchBooksIcon.Size = new Size(29, 20);
@@ -103,7 +103,7 @@
             // 
             searchStudentsIcon.AutoSize = true;
             searchStudentsIcon.Font = new Font("Segoe Fluent Icons", 15F);
-            searchStudentsIcon.ForeColor = Color.White;
+            searchStudentsIcon.ForeColor = Color.FromArgb(92, 95, 119);
             searchStudentsIcon.Location = new Point(2, 53);
             searchStudentsIcon.Name = "searchStudentsIcon";
             searchStudentsIcon.Size = new Size(29, 20);
@@ -114,7 +114,7 @@
             // 
             homeIcon.AutoSize = true;
             homeIcon.Font = new Font("Segoe Fluent Icons", 15F);
-            homeIcon.ForeColor = Color.White;
+            homeIcon.ForeColor = Color.FromArgb(92, 95, 119);
             homeIcon.Location = new Point(2, 11);
             homeIcon.Name = "homeIcon";
             homeIcon.Size = new Size(29, 20);
@@ -124,9 +124,10 @@
             // editStudentsButton
             // 
             editStudentsButton.FlatAppearance.BorderSize = 0;
-            editStudentsButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 44, 54);
+            editStudentsButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(204, 208, 218);
+            editStudentsButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 224, 232);
             editStudentsButton.FlatStyle = FlatStyle.Flat;
-            editStudentsButton.ForeColor = Color.White;
+            editStudentsButton.ForeColor = Color.FromArgb(92, 95, 119);
             editStudentsButton.Location = new Point(31, 314);
             editStudentsButton.Name = "editStudentsButton";
             editStudentsButton.Size = new Size(166, 42);
@@ -139,9 +140,10 @@
             // editUsersButton
             // 
             editUsersButton.FlatAppearance.BorderSize = 0;
-            editUsersButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 44, 54);
+            editUsersButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(204, 208, 218);
+            editUsersButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 224, 232);
             editUsersButton.FlatStyle = FlatStyle.Flat;
-            editUsersButton.ForeColor = Color.White;
+            editUsersButton.ForeColor = Color.FromArgb(92, 95, 119);
             editUsersButton.Location = new Point(31, 356);
             editUsersButton.Name = "editUsersButton";
             editUsersButton.Size = new Size(166, 42);
@@ -154,9 +156,10 @@
             // editInventoryButton
             // 
             editInventoryButton.FlatAppearance.BorderSize = 0;
-            editInventoryButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 44, 54);
+            editInventoryButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(204, 208, 218);
+            editInventoryButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 224, 232);
             editInventoryButton.FlatStyle = FlatStyle.Flat;
-            editInventoryButton.ForeColor = Color.White;
+            editInventoryButton.ForeColor = Color.FromArgb(92, 95, 119);
             editInventoryButton.Location = new Point(31, 168);
             editInventoryButton.Name = "editInventoryButton";
             editInventoryButton.Size = new Size(166, 42);
@@ -169,9 +172,10 @@
             // checkInOutButton
             // 
             checkInOutButton.FlatAppearance.BorderSize = 0;
-            checkInOutButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 44, 54);
+            checkInOutButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(204, 208, 218);
+            checkInOutButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 224, 232);
             checkInOutButton.FlatStyle = FlatStyle.Flat;
-            checkInOutButton.ForeColor = Color.White;
+            checkInOutButton.ForeColor = Color.FromArgb(92, 95, 119);
             checkInOutButton.Location = new Point(31, 126);
             checkInOutButton.Name = "checkInOutButton";
             checkInOutButton.Size = new Size(166, 42);
@@ -184,9 +188,10 @@
             // searchBooksButton
             // 
             searchBooksButton.FlatAppearance.BorderSize = 0;
-            searchBooksButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 44, 54);
+            searchBooksButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(204, 208, 218);
+            searchBooksButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 224, 232);
             searchBooksButton.FlatStyle = FlatStyle.Flat;
-            searchBooksButton.ForeColor = Color.White;
+            searchBooksButton.ForeColor = Color.FromArgb(92, 95, 119);
             searchBooksButton.Location = new Point(31, 84);
             searchBooksButton.Name = "searchBooksButton";
             searchBooksButton.Size = new Size(166, 42);
@@ -199,9 +204,10 @@
             // searchStudentsButton
             // 
             searchStudentsButton.FlatAppearance.BorderSize = 0;
-            searchStudentsButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 44, 54);
+            searchStudentsButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(204, 208, 218);
+            searchStudentsButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 224, 232);
             searchStudentsButton.FlatStyle = FlatStyle.Flat;
-            searchStudentsButton.ForeColor = Color.White;
+            searchStudentsButton.ForeColor = Color.FromArgb(92, 95, 119);
             searchStudentsButton.Location = new Point(31, 42);
             searchStudentsButton.Name = "searchStudentsButton";
             searchStudentsButton.Size = new Size(166, 42);
@@ -214,9 +220,10 @@
             // homeButton
             // 
             homeButton.FlatAppearance.BorderSize = 0;
-            homeButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 44, 54);
+            homeButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(204, 208, 218);
+            homeButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 224, 232);
             homeButton.FlatStyle = FlatStyle.Flat;
-            homeButton.ForeColor = Color.White;
+            homeButton.ForeColor = Color.FromArgb(92, 95, 119);
             homeButton.Location = new Point(31, 0);
             homeButton.Name = "homeButton";
             homeButton.Size = new Size(166, 42);
@@ -230,7 +237,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(38, 44, 54);
+            BackColor = Color.FromArgb(230, 233, 239);
             Controls.Add(editStudentsIcon);
             Controls.Add(editUsersIcon);
             Controls.Add(editInventoryIcon);

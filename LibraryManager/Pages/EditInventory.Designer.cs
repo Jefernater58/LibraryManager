@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            sideBar1 = new CustomControls.SideBar();
+            sideBar1 = new LibraryManager.CustomControls.SideBar();
             SuspendLayout();
             // 
             // sideBar1
             // 
-            sideBar1.BackColor = Color.FromArgb(38, 44, 54);
+            sideBar1.BackColor = Color.FromArgb(230, 233, 239);
             sideBar1.CurrentFormIndex = 4;
             sideBar1.Location = new Point(0, 0);
             sideBar1.Name = "sideBar1";
@@ -44,7 +44,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(44, 49, 59);
+            BackColor = Color.FromArgb(239, 241, 245);
             Controls.Add(sideBar1);
             Margin = new Padding(0);
             Name = "EditInventory";

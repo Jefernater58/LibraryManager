@@ -33,11 +33,11 @@
             // 
             // titleBar
             // 
-            titleBar.BackColor = Color.FromArgb(220, 224, 232);
-            titleBar.Location = new Point(0, 0);
+            titleBar.BackColor = Color.FromArgb(239, 241, 245);
+            titleBar.Location = new Point(1, 1);
             titleBar.Margin = new Padding(0);
             titleBar.Name = "titleBar";
-            titleBar.Size = new Size(800, 32);
+            titleBar.Size = new Size(798, 32);
             titleBar.TabIndex = 99;
             titleBar.Title = "Library Manager";
             // 
@@ -45,7 +45,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(239, 241, 245);
+            BackColor = Color.FromArgb(140, 143, 161);
             ClientSize = new Size(800, 432);
             Controls.Add(titleBar);
             FormBorderStyle = FormBorderStyle.None;

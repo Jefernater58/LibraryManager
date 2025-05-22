@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             sideBar1 = new LibraryManager.CustomControls.SideBar();
             searchTextBox = new CustomTextBox();
             searchButton = new Button();
@@ -42,7 +42,7 @@
             // 
             // sideBar1
             // 
-            sideBar1.BackColor = Color.FromArgb(38, 44, 54);
+            sideBar1.BackColor = Color.FromArgb(230, 233, 239);
             sideBar1.CurrentFormIndex = 1;
             sideBar1.Location = new Point(0, 0);
             sideBar1.Name = "sideBar1";
@@ -51,7 +51,7 @@
             // 
             // searchTextBox
             // 
-            searchTextBox.BackColor = Color.FromArgb(51, 59, 71);
+            searchTextBox.BackColor = Color.FromArgb(204, 208, 218);
             searchTextBox.IconText = "";
             searchTextBox.Location = new Point(230, 32);
             searchTextBox.Name = "searchTextBox";
@@ -83,29 +83,29 @@
             dataGrid.AllowUserToDeleteRows = false;
             dataGrid.AllowUserToResizeColumns = false;
             dataGrid.AllowUserToResizeRows = false;
-            dataGrid.BackgroundColor = Color.FromArgb(51, 59, 71);
+            dataGrid.BackgroundColor = Color.FromArgb(230, 233, 239);
             dataGrid.BorderStyle = BorderStyle.None;
             dataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(51, 59, 71);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(220, 224, 232);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(76, 79, 105);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGrid.Columns.AddRange(new DataGridViewColumn[] { StudentID, StudentName, StudentYearGroup });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(38, 44, 54);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dataGrid.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(230, 233, 239);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(76, 79, 105);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             dataGrid.EnableHeadersVisualStyles = false;
-            dataGrid.GridColor = Color.FromArgb(38, 44, 54);
+            dataGrid.GridColor = Color.FromArgb(230, 233, 239);
             dataGrid.Location = new Point(230, 100);
             dataGrid.Name = "dataGrid";
             dataGrid.ReadOnly = true;
@@ -140,7 +140,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(44, 49, 59);
+            BackColor = Color.FromArgb(239, 241, 245);
             Controls.Add(dataGrid);
             Controls.Add(searchButton);
             Controls.Add(searchTextBox);
