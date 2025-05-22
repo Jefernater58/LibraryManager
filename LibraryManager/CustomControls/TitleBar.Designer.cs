@@ -40,7 +40,7 @@
             minimiseButton.FlatAppearance.BorderSize = 0;
             minimiseButton.FlatStyle = FlatStyle.Flat;
             minimiseButton.Font = new Font("Segoe Fluent Icons", 7F);
-            minimiseButton.ForeColor = Color.White;
+            minimiseButton.ForeColor = Color.FromArgb(76, 79, 105);
             minimiseButton.Location = new Point(708, 0);
             minimiseButton.Margin = new Padding(0);
             minimiseButton.Name = "minimiseButton";
@@ -74,7 +74,7 @@
             closeButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(147, 42, 49);
             closeButton.FlatStyle = FlatStyle.Flat;
             closeButton.Font = new Font("Segoe Fluent Icons", 7F);
-            closeButton.ForeColor = Color.White;
+            closeButton.ForeColor = Color.FromArgb(76, 79, 105);
             closeButton.Location = new Point(754, 0);
             closeButton.Margin = new Padding(0);
             closeButton.Name = "closeButton";
@@ -87,7 +87,7 @@
             // title
             // 
             title.AutoSize = true;
-            title.ForeColor = Color.White;
+            title.ForeColor = Color.FromArgb(76, 79, 105);
             title.Location = new Point(6, 9);
             title.Name = "title";
             title.Size = new Size(93, 15);
@@ -99,7 +99,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(28, 29, 33);
+            BackColor = Color.FromArgb(220, 224, 232);
             Controls.Add(minimiseButton);
             Controls.Add(toggleButton);
             Controls.Add(closeButton);

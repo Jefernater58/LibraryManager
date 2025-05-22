@@ -129,7 +129,7 @@
             BookTitle.Name = "BookTitle";
             BookTitle.ReadOnly = true;
             BookTitle.Resizable = DataGridViewTriState.False;
-            BookTitle.Width = 171;
+            BookTitle.Width = 172;
             // 
             // BookAuthor
             // 
@@ -137,7 +137,7 @@
             BookAuthor.Name = "BookAuthor";
             BookAuthor.ReadOnly = true;
             BookAuthor.Resizable = DataGridViewTriState.False;
-            BookAuthor.Width = 171;
+            BookAuthor.Width = 172;
             // 
             // BookRating
             // 

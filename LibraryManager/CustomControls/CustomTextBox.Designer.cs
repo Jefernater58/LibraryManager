@@ -37,7 +37,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.FromArgb(44, 49, 59);
+            panel1.BackColor = Color.FromArgb(239, 241, 245);
             panel1.Controls.Add(iconLabel);
             panel1.Controls.Add(textBox);
             panel1.Location = new Point(1, 1);
@@ -49,7 +49,7 @@
             // 
             iconLabel.AutoSize = true;
             iconLabel.Font = new Font("Segoe Fluent Icons", 15F);
-            iconLabel.ForeColor = Color.Gray;
+            iconLabel.ForeColor = Color.FromArgb(108, 111, 133);
             iconLabel.Location = new Point(3, 7);
             iconLabel.Name = "iconLabel";
             iconLabel.Size = new Size(29, 20);
@@ -59,10 +59,10 @@
             // textBox
             // 
             textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox.BackColor = Color.FromArgb(44, 49, 59);
+            textBox.BackColor = Color.FromArgb(239, 241, 245);
             textBox.BorderStyle = BorderStyle.None;
             textBox.Font = new Font("Segoe UI", 9F);
-            textBox.ForeColor = Color.White;
+            textBox.ForeColor = Color.FromArgb(76, 79, 105);
             textBox.Location = new Point(34, 9);
             textBox.Name = "textBox";
             textBox.PlaceholderText = "PlaceholderText";
@@ -73,7 +73,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(51, 59, 71);
+            BackColor = Color.FromArgb(204, 208, 218);
             Controls.Add(panel1);
             Name = "CustomTextBox";
             Size = new Size(300, 36);

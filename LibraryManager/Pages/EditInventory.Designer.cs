@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            sideBar1 = new LibraryManager.CustomControls.SideBar();
+            sideBar1 = new CustomControls.SideBar();
             SuspendLayout();
             // 
             // sideBar1

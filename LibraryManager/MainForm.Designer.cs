@@ -33,7 +33,7 @@
             // 
             // titleBar
             // 
-            titleBar.BackColor = Color.FromArgb(28, 29, 33);
+            titleBar.BackColor = Color.FromArgb(220, 224, 232);
             titleBar.Location = new Point(0, 0);
             titleBar.Margin = new Padding(0);
             titleBar.Name = "titleBar";
@@ -45,7 +45,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(51, 59, 71);
+            BackColor = Color.FromArgb(239, 241, 245);
             ClientSize = new Size(800, 432);
             Controls.Add(titleBar);
             FormBorderStyle = FormBorderStyle.None;

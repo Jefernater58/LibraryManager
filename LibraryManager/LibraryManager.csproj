@@ -1,15 +1,16 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">  
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWindowsForms>true</UseWindowsForms>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+  <PropertyGroup>  
+    <OutputType>WinExe</OutputType>  
+    <TargetFramework>net8.0-windows</TargetFramework>  
+    <Nullable>enable</Nullable>  
+    <UseWindowsForms>true</UseWindowsForms>  
+    <ImplicitUsings>enable</ImplicitUsings>  
+    <ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
+  </PropertyGroup>  
 
-  <ItemGroup>
-    <Folder Include="CustomControls\" />
-  </ItemGroup>
+  <ItemGroup>  
+    <Folder Include="CustomControls\" />  
+  </ItemGroup>  
 
 </Project>

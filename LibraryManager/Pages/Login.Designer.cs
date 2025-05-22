@@ -39,7 +39,7 @@
             // 
             welcomeLabel.AutoSize = true;
             welcomeLabel.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            welcomeLabel.ForeColor = Color.White;
+            welcomeLabel.ForeColor = Color.FromArgb(76, 79, 105);
             welcomeLabel.Location = new Point(346, 66);
             welcomeLabel.Name = "welcomeLabel";
             welcomeLabel.Size = new Size(108, 30);
@@ -48,7 +48,7 @@
             // 
             // usernameTextBox
             // 
-            usernameTextBox.BackColor = Color.FromArgb(51, 59, 71);
+            usernameTextBox.BackColor = Color.FromArgb(204, 208, 218);
             usernameTextBox.IconText = "";
             usernameTextBox.Location = new Point(250, 116);
             usernameTextBox.Name = "usernameTextBox";
@@ -60,7 +60,7 @@
             // 
             // passwordTextBox
             // 
-            passwordTextBox.BackColor = Color.FromArgb(51, 59, 71);
+            passwordTextBox.BackColor = Color.FromArgb(204, 208, 218);
             passwordTextBox.IconText = "";
             passwordTextBox.Location = new Point(250, 172);
             passwordTextBox.Name = "passwordTextBox";
@@ -72,7 +72,7 @@
             // 
             // loginButton
             // 
-            loginButton.BackColor = Color.FromArgb(79, 158, 235);
+            loginButton.BackColor = Color.FromArgb(4, 165, 229);
             loginButton.FlatAppearance.BorderColor = Color.FromArgb(35, 133, 231);
             loginButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(113, 176, 239);
             loginButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(99, 168, 238);
@@ -91,7 +91,7 @@
             // 
             incorrectCredentialsLabel.AutoSize = true;
             incorrectCredentialsLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            incorrectCredentialsLabel.ForeColor = Color.FromArgb(147, 42, 49);
+            incorrectCredentialsLabel.ForeColor = Color.FromArgb(210, 15, 57);
             incorrectCredentialsLabel.Location = new Point(338, 280);
             incorrectCredentialsLabel.Name = "incorrectCredentialsLabel";
             incorrectCredentialsLabel.Size = new Size(124, 15);
@@ -103,7 +103,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(44, 49, 59);
+            BackColor = Color.FromArgb(230, 233, 239);
             Controls.Add(incorrectCredentialsLabel);
             Controls.Add(loginButton);
             Controls.Add(passwordTextBox);
