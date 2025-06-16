@@ -98,7 +98,7 @@
             // TitleBar
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
-            BackColor = Color.FromArgb(239, 241, 245);
+            BackColor = Color.FromArgb(230, 233, 239);
             Controls.Add(minimiseButton);
             Controls.Add(toggleButton);
             Controls.Add(closeButton);

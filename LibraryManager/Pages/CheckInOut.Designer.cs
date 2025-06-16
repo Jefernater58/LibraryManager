@@ -40,7 +40,7 @@
             // 
             // sideBar1
             // 
-            sideBar1.BackColor = Color.FromArgb(230, 233, 239);
+            sideBar1.BackColor = Color.FromArgb(220, 224, 232);
             sideBar1.CurrentFormIndex = 3;
             sideBar1.Location = new Point(0, 0);
             sideBar1.Name = "sideBar1";

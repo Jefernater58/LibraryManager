@@ -29,21 +29,35 @@
         private void InitializeComponent()
         {
             sideBar1 = new CustomControls.SideBar();
+            searchTextBox = new CustomTextBox();
             SuspendLayout();
             // 
             // sideBar1
             // 
-            sideBar1.BackColor = Color.FromArgb(230, 233, 239);
+            sideBar1.BackColor = Color.FromArgb(220, 224, 232);
             sideBar1.CurrentFormIndex = 4;
             sideBar1.Location = new Point(0, 0);
             sideBar1.Name = "sideBar1";
             sideBar1.Size = new Size(198, 398);
             sideBar1.TabIndex = 0;
             // 
+            // searchTextBox
+            // 
+            searchTextBox.BackColor = Color.FromArgb(204, 208, 218);
+            searchTextBox.IconText = "";
+            searchTextBox.Location = new Point(230, 32);
+            searchTextBox.Name = "searchTextBox";
+            searchTextBox.PasswordChar = '\0';
+            searchTextBox.Size = new Size(300, 36);
+            searchTextBox.TabIndex = 2;
+            searchTextBox.TextBoxPlaceholder = "Title";
+            searchTextBox.TextBoxText = "";
+            // 
             // EditInventory
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
             BackColor = Color.FromArgb(239, 241, 245);
+            Controls.Add(searchTextBox);
             Controls.Add(sideBar1);
             Margin = new Padding(0);
             Name = "EditInventory";
@@ -54,5 +68,6 @@
         #endregion
 
         private CustomControls.SideBar sideBar1;
+        private CustomTextBox searchTextBox;
     }
 }

@@ -33,7 +33,7 @@
             // 
             // titleBar
             // 
-            titleBar.BackColor = Color.FromArgb(239, 241, 245);
+            titleBar.BackColor = Color.FromArgb(230, 233, 239);
             titleBar.Location = new Point(1, 1);
             titleBar.Margin = new Padding(0);
             titleBar.Name = "titleBar";

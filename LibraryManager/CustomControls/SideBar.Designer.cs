@@ -236,7 +236,7 @@
             // SideBar
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
-            BackColor = Color.FromArgb(230, 233, 239);
+            BackColor = Color.FromArgb(220, 224, 232);
             Controls.Add(editStudentsIcon);
             Controls.Add(editUsersIcon);
             Controls.Add(editInventoryIcon);
