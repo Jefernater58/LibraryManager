@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            sideBar1 = new LibraryManager.CustomControls.SideBar();
+            sideBar1 = new CustomControls.SideBar();
             studentIDTextBox = new CustomTextBox();
             bookIDTextBox = new CustomTextBox();
             checkInButton = new Button();
@@ -143,8 +143,7 @@
             // 
             // CheckInOut
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.Inherit;
             BackColor = Color.FromArgb(239, 241, 245);
             Controls.Add(label1);
             Controls.Add(alreadyCheckedInLabel);

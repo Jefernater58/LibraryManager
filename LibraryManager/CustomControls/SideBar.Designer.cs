@@ -235,8 +235,7 @@
             // 
             // SideBar
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.Inherit;
             BackColor = Color.FromArgb(230, 233, 239);
             Controls.Add(editStudentsIcon);
             Controls.Add(editUsersIcon);

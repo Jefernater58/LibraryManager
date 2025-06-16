@@ -30,7 +30,7 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            sideBar1 = new LibraryManager.CustomControls.SideBar();
+            sideBar1 = new CustomControls.SideBar();
             searchTextBox = new CustomTextBox();
             searchButton = new Button();
             dataGrid = new DataGridView();
@@ -138,8 +138,7 @@
             // 
             // SearchStudents
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.Inherit;
             BackColor = Color.FromArgb(239, 241, 245);
             Controls.Add(dataGrid);
             Controls.Add(searchButton);

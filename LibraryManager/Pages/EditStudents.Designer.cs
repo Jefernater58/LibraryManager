@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            sideBar1 = new LibraryManager.CustomControls.SideBar();
+            sideBar1 = new CustomControls.SideBar();
             SuspendLayout();
             // 
             // sideBar1
@@ -42,8 +42,7 @@
             // 
             // EditStudents
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.Inherit;
             BackColor = Color.FromArgb(239, 241, 245);
             Controls.Add(sideBar1);
             Margin = new Padding(0);

@@ -43,8 +43,7 @@
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.Inherit;
             BackColor = Color.FromArgb(140, 143, 161);
             ClientSize = new Size(800, 432);
             Controls.Add(titleBar);
