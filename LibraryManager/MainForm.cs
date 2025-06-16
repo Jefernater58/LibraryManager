@@ -4,12 +4,14 @@ namespace LibraryManager
     {
         // constant for the window title
         private const string windowTitle = "Library Manager";
+        // the page to open on startup
+        private UserControl startPage = new Pages.Login();
 
         public MainForm()
         {
             InitializeComponent();
             // open the login page on startup
-            openPage(new Pages.Login(), "Login");
+            openPage(startPage, "Login");
         }
 
         public void openPage(UserControl page, string pageTitle)
@@ -22,8 +24,10 @@ namespace LibraryManager
 
             // rename the title of the window and position the page
             titleBar.Title = windowTitle + " - " + pageTitle;
-            page.Name = "currentPage";
             page.Location = new Point(1, titleBar.Height + 1);
+
+            // rename the page so that it can be removed later
+            page.Name = "currentPage";
 
             // add the to the form
             Controls.Add(page);

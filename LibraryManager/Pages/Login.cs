@@ -2,7 +2,7 @@
 {
     public partial class Login : UserControl
     {
-        private MainForm parentForm;
+        private MainForm? parentForm;
 
         public Login()
         {
@@ -12,8 +12,8 @@
         // get the parent form of the control, when it loads, so that we can change the page
         protected override void OnLoad(EventArgs e)
         {
-            base.OnParentChanged(e);
-            parentForm = (MainForm)FindForm();
+            base.OnLoad(e);
+            parentForm = (MainForm?)FindForm();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -23,14 +23,14 @@
             string password = passwordTextBox.TextBoxText;
 
             // database functionality to be added here
-
+            
             if (username != null && password != null)
             {
                 if (username == "test" && password == "test")
                 {
                     incorrectCredentialsLabel.Visible = false;
 
-                    parentForm.openPage(new Pages.Home(), "Home");
+                    parentForm?.openPage(new Pages.Home(), "Home");
                 }
                 else
                 {
