@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace LibraryManager
 {
     public partial class MainForm : Form
@@ -12,6 +14,15 @@ namespace LibraryManager
             InitializeComponent();
             // open the login page on startup
             openPage(startPage, "Login");
+        }
+
+        public bool adminPrompt()
+        {
+            PasswordDialogue passwordDialogue = new PasswordDialogue();
+            DialogResult result = passwordDialogue.ShowDialog();
+            Debug.WriteLine(result);
+
+            return result == DialogResult.OK;
         }
 
         public void openPage(UserControl page, string pageTitle)

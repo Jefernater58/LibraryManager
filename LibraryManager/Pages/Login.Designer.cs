@@ -33,6 +33,7 @@
             passwordTextBox = new CustomTextBox();
             loginButton = new Button();
             incorrectCredentialsLabel = new Label();
+            emptyFieldLabel = new Label();
             SuspendLayout();
             // 
             // welcomeLabel
@@ -99,10 +100,23 @@
             incorrectCredentialsLabel.Text = "Incorrect Credentials";
             incorrectCredentialsLabel.Visible = false;
             // 
+            // emptyFieldLabel
+            // 
+            emptyFieldLabel.AutoSize = true;
+            emptyFieldLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            emptyFieldLabel.ForeColor = Color.FromArgb(210, 15, 57);
+            emptyFieldLabel.Location = new Point(261, 280);
+            emptyFieldLabel.Name = "emptyFieldLabel";
+            emptyFieldLabel.Size = new Size(276, 15);
+            emptyFieldLabel.TabIndex = 5;
+            emptyFieldLabel.Text = "Username or Password fields must not be empty";
+            emptyFieldLabel.Visible = false;
+            // 
             // Login
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
             BackColor = Color.FromArgb(230, 233, 239);
+            Controls.Add(emptyFieldLabel);
             Controls.Add(incorrectCredentialsLabel);
             Controls.Add(loginButton);
             Controls.Add(passwordTextBox);
@@ -121,5 +135,6 @@
         private CustomTextBox passwordTextBox;
         private Button loginButton;
         private Label incorrectCredentialsLabel;
+        private Label emptyFieldLabel;
     }
 }

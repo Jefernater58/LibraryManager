@@ -32,8 +32,15 @@
 
                     parentForm?.openPage(new Pages.Home(), "Home");
                 }
+                else if (username == "" || password == "")
+                {
+                    incorrectCredentialsLabel.Visible = false;
+                    emptyFieldLabel.Visible = true;
+                }
+
                 else
                 {
+                    emptyFieldLabel.Visible = false;
                     incorrectCredentialsLabel.Visible = true;
                 }
             }

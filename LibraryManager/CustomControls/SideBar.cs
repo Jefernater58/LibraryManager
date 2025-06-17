@@ -91,8 +91,10 @@ namespace LibraryManager.CustomControls
 
         private void editStudentsButton_Click(object sender, EventArgs e)
         {
-            // TODO: make sure the user is admin from database before opening this page
-            parentForm.openPage(new Pages.EditStudents(), "Edit Students");
+            // ask the user to enter the administrator password
+            bool result = parentForm.adminPrompt();
+
+            if (result) parentForm.openPage(new Pages.EditStudents(), "Edit Students");
         }
     }
 }
