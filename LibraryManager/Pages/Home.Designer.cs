@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            sideBar1 = new CustomControls.SideBar();
+            sideBar1 = new LibraryManager.CustomControls.SideBar();
+            label1 = new Label();
             SuspendLayout();
             // 
             // sideBar1
@@ -40,19 +41,33 @@
             sideBar1.Size = new Size(198, 398);
             sideBar1.TabIndex = 0;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(76, 79, 105);
+            label1.Location = new Point(405, 183);
+            label1.Name = "label1";
+            label1.Size = new Size(213, 15);
+            label1.TabIndex = 15;
+            label1.Text = "Some interesting data will show here";
+            // 
             // Home
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
             BackColor = Color.FromArgb(239, 241, 245);
+            Controls.Add(label1);
             Controls.Add(sideBar1);
             Margin = new Padding(0);
             Name = "Home";
             Size = new Size(798, 398);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private CustomControls.SideBar sideBar1;
+        private Label label1;
     }
 }

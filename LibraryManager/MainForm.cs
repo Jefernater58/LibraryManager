@@ -1,5 +1,3 @@
-using System.Diagnostics;
-
 namespace LibraryManager
 {
     public partial class MainForm : Form

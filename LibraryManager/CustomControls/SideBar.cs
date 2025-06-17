@@ -4,7 +4,7 @@ namespace LibraryManager.CustomControls
 {
     public partial class SideBar : UserControl
     {
-        private MainForm parentForm;
+        private MainForm? parentForm;
 
         // property for the current form, so that it can be highlighted in the sidebar
         private int _currentFormIndex = 0;
@@ -27,7 +27,7 @@ namespace LibraryManager.CustomControls
         protected override void OnLoad(EventArgs e)
         {
             // get the parent form of the control, when it loads, so that we can change the page
-            parentForm = (MainForm)FindForm();
+            parentForm = (MainForm?)FindForm();
 
             // highlight the current form in the sidebar
             if (_currentFormIndex == 0)
@@ -66,36 +66,36 @@ namespace LibraryManager.CustomControls
 
         private void homeButton_Click(object sender, EventArgs e)
         {
-            parentForm.openPage(new Pages.Home(), "Home");
+            parentForm?.openPage(new Pages.Home(), "Home");
         }
 
         private void searchStudentsButton_Click(object sender, EventArgs e)
         {
-            parentForm.openPage(new Pages.SearchStudents(), "Search for students");
+            parentForm?.openPage(new Pages.SearchStudents(), "Search for students");
         }
 
         private void searchBooksButton_Click(object sender, EventArgs e)
         {
-            parentForm.openPage(new Pages.SearchBooks(), "Search for books");
+            parentForm?.openPage(new Pages.SearchBooks(), "Search for books");
         }
 
         private void checkInOutButton_Click(object sender, EventArgs e)
         {
-            parentForm.openPage(new Pages.CheckInOut(), "Check in/out books");
+            parentForm?.openPage(new Pages.CheckInOut(), "Check in/out books");
         }
 
         private void editInventoryButton_Click(object sender, EventArgs e)
         {
-            parentForm.openPage(new Pages.EditInventory(), "Edit Inventory");
+            parentForm?.openPage(new Pages.EditInventory(), "Edit Inventory");
         }
 
         private void editStudentsButton_Click(object sender, EventArgs e)
         {
             // ask the user to enter the administrator password
-            bool result = parentForm.adminPrompt();
+            bool? result = parentForm?.adminPrompt();
 
             // only open the page if the password was entered correctly
-            if (result) parentForm.openPage(new Pages.EditStudents(), "Edit Students");
+            if ((bool)result) parentForm?.openPage(new Pages.EditStudents(), "Edit Students");
         }
     }
 }
