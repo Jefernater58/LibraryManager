@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             editStudentsIcon = new Label();
-            editUsersIcon = new Label();
             editInventoryIcon = new Label();
             checkInOutIcon = new Label();
             searchBooksIcon = new Label();
             searchStudentsIcon = new Label();
             homeIcon = new Label();
             editStudentsButton = new Button();
-            editUsersButton = new Button();
             editInventoryButton = new Button();
             checkInOutButton = new Button();
             searchBooksButton = new Button();
@@ -49,22 +47,11 @@
             editStudentsIcon.AutoSize = true;
             editStudentsIcon.Font = new Font("Segoe Fluent Icons", 15F);
             editStudentsIcon.ForeColor = Color.FromArgb(92, 95, 119);
-            editStudentsIcon.Location = new Point(2, 325);
+            editStudentsIcon.Location = new Point(3, 367);
             editStudentsIcon.Name = "editStudentsIcon";
             editStudentsIcon.Size = new Size(29, 20);
             editStudentsIcon.TabIndex = 9;
             editStudentsIcon.Text = "";
-            // 
-            // editUsersIcon
-            // 
-            editUsersIcon.AutoSize = true;
-            editUsersIcon.Font = new Font("Segoe Fluent Icons", 15F);
-            editUsersIcon.ForeColor = Color.FromArgb(92, 95, 119);
-            editUsersIcon.Location = new Point(2, 367);
-            editUsersIcon.Name = "editUsersIcon";
-            editUsersIcon.Size = new Size(29, 20);
-            editUsersIcon.TabIndex = 10;
-            editUsersIcon.Text = "";
             // 
             // editInventoryIcon
             // 
@@ -128,7 +115,7 @@
             editStudentsButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 224, 232);
             editStudentsButton.FlatStyle = FlatStyle.Flat;
             editStudentsButton.ForeColor = Color.FromArgb(92, 95, 119);
-            editStudentsButton.Location = new Point(31, 314);
+            editStudentsButton.Location = new Point(32, 356);
             editStudentsButton.Name = "editStudentsButton";
             editStudentsButton.Size = new Size(166, 42);
             editStudentsButton.TabIndex = 2;
@@ -136,22 +123,6 @@
             editStudentsButton.TextAlign = ContentAlignment.MiddleLeft;
             editStudentsButton.UseVisualStyleBackColor = true;
             editStudentsButton.Click += editStudentsButton_Click;
-            // 
-            // editUsersButton
-            // 
-            editUsersButton.FlatAppearance.BorderSize = 0;
-            editUsersButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(204, 208, 218);
-            editUsersButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 224, 232);
-            editUsersButton.FlatStyle = FlatStyle.Flat;
-            editUsersButton.ForeColor = Color.FromArgb(92, 95, 119);
-            editUsersButton.Location = new Point(31, 356);
-            editUsersButton.Name = "editUsersButton";
-            editUsersButton.Size = new Size(166, 42);
-            editUsersButton.TabIndex = 3;
-            editUsersButton.Text = "Edit users (admin)";
-            editUsersButton.TextAlign = ContentAlignment.MiddleLeft;
-            editUsersButton.UseVisualStyleBackColor = true;
-            editUsersButton.Click += editUsersButton_Click;
             // 
             // editInventoryButton
             // 
@@ -238,14 +209,12 @@
             AutoScaleMode = AutoScaleMode.Inherit;
             BackColor = Color.FromArgb(220, 224, 232);
             Controls.Add(editStudentsIcon);
-            Controls.Add(editUsersIcon);
             Controls.Add(editInventoryIcon);
             Controls.Add(checkInOutIcon);
             Controls.Add(searchBooksIcon);
             Controls.Add(searchStudentsIcon);
             Controls.Add(homeIcon);
             Controls.Add(editStudentsButton);
-            Controls.Add(editUsersButton);
             Controls.Add(editInventoryButton);
             Controls.Add(checkInOutButton);
             Controls.Add(searchBooksButton);
@@ -260,14 +229,12 @@
         #endregion
 
         private Label editStudentsIcon;
-        private Label editUsersIcon;
         private Label editInventoryIcon;
         private Label checkInOutIcon;
         private Label searchBooksIcon;
         private Label searchStudentsIcon;
         private Label homeIcon;
         private Button editStudentsButton;
-        private Button editUsersButton;
         private Button editInventoryButton;
         private Button checkInOutButton;
         private Button searchBooksButton;

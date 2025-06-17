@@ -60,11 +60,6 @@ namespace LibraryManager.CustomControls
                 editStudentsButton.ForeColor = highlightColor;
                 editStudentsIcon.ForeColor = highlightColor;
             }
-            else if (_currentFormIndex == 6)
-            {
-                editUsersButton.ForeColor = highlightColor;
-                editUsersIcon.ForeColor = highlightColor;
-            }
 
             base.OnLoad(e);
         }
@@ -98,12 +93,6 @@ namespace LibraryManager.CustomControls
         {
             // TODO: make sure the user is admin from database before opening this page
             parentForm.openPage(new Pages.EditStudents(), "Edit Students");
-        }
-
-        private void editUsersButton_Click(object sender, EventArgs e)
-        {
-            // TODO: make sure the user is admin from database before opening this page
-            parentForm.openPage(new Pages.EditUsers(), "Edit Users");
         }
     }
 }
