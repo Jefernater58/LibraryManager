@@ -24,6 +24,7 @@ namespace LibraryManager
 
             if (passwordTextBox.TextBoxText == adminPassword)
             {
+                // set the result as OK
                 this.DialogResult = DialogResult.OK;
             }
             else

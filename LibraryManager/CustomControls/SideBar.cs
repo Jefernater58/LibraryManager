@@ -94,6 +94,7 @@ namespace LibraryManager.CustomControls
             // ask the user to enter the administrator password
             bool result = parentForm.adminPrompt();
 
+            // only open the page if the password was entered correctly
             if (result) parentForm.openPage(new Pages.EditStudents(), "Edit Students");
         }
     }

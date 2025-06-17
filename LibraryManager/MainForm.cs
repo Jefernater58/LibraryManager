@@ -18,10 +18,11 @@ namespace LibraryManager
 
         public bool adminPrompt()
         {
+            // open a password dialogue
             PasswordDialogue passwordDialogue = new PasswordDialogue();
             DialogResult result = passwordDialogue.ShowDialog();
-            Debug.WriteLine(result);
-
+            
+            // return true if the result is OK
             return result == DialogResult.OK;
         }
 
