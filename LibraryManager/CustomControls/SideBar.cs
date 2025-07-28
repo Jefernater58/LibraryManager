@@ -92,7 +92,8 @@ namespace LibraryManager.CustomControls
         private void editStudentsButton_Click(object sender, EventArgs e)
         {
             // ask the user to enter the administrator password
-            bool? result = parentForm?.adminPrompt();
+            // TODO: check the database that the logged in user is an administrator
+            bool? result = true;
 
             // only open the page if the password was entered correctly
             if ((bool)result) parentForm?.openPage(new Pages.EditStudents(), "Edit Students");
