@@ -151,7 +151,7 @@
             checkInOutButton.Name = "checkInOutButton";
             checkInOutButton.Size = new Size(166, 42);
             checkInOutButton.TabIndex = 5;
-            checkInOutButton.Text = "Check in/out books";
+            checkInOutButton.Text = "Borrow / return books";
             checkInOutButton.TextAlign = ContentAlignment.MiddleLeft;
             checkInOutButton.UseVisualStyleBackColor = true;
             checkInOutButton.Click += checkInOutButton_Click;

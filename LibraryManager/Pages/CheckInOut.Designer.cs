@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            sideBar1 = new CustomControls.SideBar();
+            sideBar1 = new LibraryManager.CustomControls.SideBar();
             studentIDTextBox = new CustomTextBox();
             bookIDTextBox = new CustomTextBox();
             checkInButton = new Button();
@@ -84,7 +84,7 @@
             checkInButton.Name = "checkInButton";
             checkInButton.Size = new Size(140, 36);
             checkInButton.TabIndex = 3;
-            checkInButton.Text = "CHECK IN";
+            checkInButton.Text = "RETURN";
             checkInButton.UseVisualStyleBackColor = false;
             checkInButton.Click += checkInButton_Click;
             // 
@@ -101,7 +101,7 @@
             checkOutButton.Name = "checkOutButton";
             checkOutButton.Size = new Size(140, 36);
             checkOutButton.TabIndex = 3;
-            checkOutButton.Text = "CHECK OUT";
+            checkOutButton.Text = "BORROW";
             checkOutButton.UseVisualStyleBackColor = false;
             checkOutButton.Click += checkOutButton_Click;
             // 
@@ -124,9 +124,9 @@
             alreadyCheckedInLabel.ForeColor = Color.FromArgb(210, 15, 57);
             alreadyCheckedInLabel.Location = new Point(393, 261);
             alreadyCheckedInLabel.Name = "alreadyCheckedInLabel";
-            alreadyCheckedInLabel.Size = new Size(212, 15);
+            alreadyCheckedInLabel.Size = new Size(202, 15);
             alreadyCheckedInLabel.TabIndex = 6;
-            alreadyCheckedInLabel.Text = "Error! This book is already checked in";
+            alreadyCheckedInLabel.Text = "Error! This book is already returned";
             alreadyCheckedInLabel.Visible = false;
             // 
             // label1
@@ -136,9 +136,9 @@
             label1.ForeColor = Color.FromArgb(210, 15, 57);
             label1.Location = new Point(384, 261);
             label1.Name = "label1";
-            label1.Size = new Size(221, 15);
+            label1.Size = new Size(207, 15);
             label1.TabIndex = 7;
-            label1.Text = "Error! This book is already checked out";
+            label1.Text = "Error! This book is already borrowed";
             label1.Visible = false;
             // 
             // CheckInOut
