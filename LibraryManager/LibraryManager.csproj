@@ -6,7 +6,8 @@
     <Nullable>enable</Nullable>  
     <UseWindowsForms>true</UseWindowsForms>  
     <ImplicitUsings>enable</ImplicitUsings>  
-    <ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
+    <ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>  
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>  
 
   <ItemGroup>  
@@ -14,7 +15,13 @@
   </ItemGroup>  
 
   <ItemGroup>
-    <PackageReference Include="System.Data.SQLite" Version="2.0.2" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.9" />
+  </ItemGroup>  
+
+  <ItemGroup>
+    <None Update="db.sqlite">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>  
 
 </Project>

@@ -1,4 +1,8 @@
-﻿namespace LibraryManager.Pages
+﻿using Microsoft.Data.Sqlite;
+using System.Security.Cryptography;
+using System.Text;
+
+namespace LibraryManager.Pages
 {
     public partial class Login : UserControl
     {
@@ -22,31 +26,75 @@
             string username = usernameTextBox.TextBoxText;
             string password = passwordTextBox.TextBoxText;
 
-            // database functionality to be added here
-            
-            if (username != null && password != null)
+            // if the username or password is empty, show an error message
+            if (username == "" || password == "" || username == null || password == null)
             {
-                if (username == "test" && password == "test")
-                {
-                    incorrectCredentialsLabel.Visible = false;
+                incorrectCredentialsLabel.Visible = false;
+                emptyFieldLabel.Visible = true;
+            }
 
-                    parentForm?.openPage(new Pages.Home(), "Home");
-                }
-                else if (username == "" || password == "")
-                {
-                    incorrectCredentialsLabel.Visible = false;
-                    emptyFieldLabel.Visible = true;
-                }
+            // generate a hash of the password
+            string hashString;
+            using (var md5 = MD5.Create())
+            {
+                byte[] hashBytes = md5.ComputeHash(Encoding.UTF8.GetBytes(password));
+                hashString = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+            }
 
-                else
+            bool authenticated = false;
+
+            // connect to the database
+            string connectionString = "Data Source=db.sqlite";
+            using (var connection = new SqliteConnection(connectionString))
+            {
+                connection.Open();
+
+                // create the Users table if it doesn't exist
+                var createCmd = connection.CreateCommand();
+                createCmd.CommandText =
+                @"
+                    CREATE TABLE IF NOT EXISTS Users (
+                        Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        Name TEXT NOT NULL,
+                        PasswordHash TEXT NOT NULL,
+                        Admin BOOLEAN NOT NULL DEFAULT 0
+                    );
+                ";
+                createCmd.ExecuteNonQuery();
+
+                // check if the user exists
+                var selectCmd = connection.CreateCommand();
+                selectCmd.CommandText =
+                @"
+                    SELECT COUNT(*) FROM Users
+                    WHERE Name = $name AND PasswordHash = $passwordHash;
+                ";
+                // using a parameterized query to prevent SQL injection
+                selectCmd.Parameters.AddWithValue("$name", username);
+                selectCmd.Parameters.AddWithValue("$passwordHash", hashString);
+                long result = (long)selectCmd.ExecuteScalar();
+                if (result == 1) 
                 {
-                    emptyFieldLabel.Visible = false;
-                    incorrectCredentialsLabel.Visible = true;
+                    authenticated = true;
                 }
+                else if (result > 1)
+                {
+                    throw new Exception("Database error: multiple users with the same username and password. Please contact your administrator.");
+                }
+            }
+
+            if (authenticated)
+            {
+                // open the home page
+                incorrectCredentialsLabel.Visible = false;
+                emptyFieldLabel.Visible = false;
+                parentForm?.openPage(new Pages.Home(), "Home");
             }
             else
             {
-                throw new Exception("An unexpected error occurred, username and password must not be null.");
+                // tell the user that the credentials are incorrect
+                emptyFieldLabel.Visible = false;
+                incorrectCredentialsLabel.Visible = true;
             }
         }
     }
