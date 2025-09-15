@@ -7,6 +7,13 @@ namespace LibraryManager
         // the page to open on startup
         private UserControl startPage = new Pages.Login();
 
+        private bool isAdmin;
+        public bool IsAdmin
+        {
+            get { return isAdmin; }
+            set { isAdmin = value; }
+        }
+
         public MainForm()
         {
             InitializeComponent();

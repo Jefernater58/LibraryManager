@@ -1,4 +1,6 @@
 ﻿using Microsoft.Data.Sqlite;
+using System.Diagnostics;
+using System.Reflection.Metadata;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -42,6 +44,7 @@ namespace LibraryManager.Pages
             }
 
             bool authenticated = false;
+            bool isAdmin = false;
 
             // connect to the database
             string connectionString = "Data Source=db.sqlite";
@@ -76,6 +79,17 @@ namespace LibraryManager.Pages
                 if (result == 1) 
                 {
                     authenticated = true;
+
+                    // get whether the user is administrator
+                    var adminCmd = connection.CreateCommand();
+                    adminCmd.CommandText =
+                        @"
+                            SELECT Admin FROM Users
+                            WHERE Name = $name AND PasswordHash = $passwordHash;
+                        ";
+                    adminCmd.Parameters.AddWithValue("$name", username);
+                    adminCmd.Parameters.AddWithValue("$passwordHash", hashString);
+                    isAdmin = (long)adminCmd.ExecuteScalar() != 0;
                 }
                 else if (result > 1)
                 {
@@ -88,7 +102,10 @@ namespace LibraryManager.Pages
                 // open the home page
                 incorrectCredentialsLabel.Visible = false;
                 emptyFieldLabel.Visible = false;
-                parentForm?.openPage(new Pages.Home(), "Home");
+                parentForm.openPage(new Pages.Home(), "Home");
+
+                // set isAdmin in MainForm to appropriate value
+                parentForm.IsAdmin = isAdmin;
             }
             else
             {
