@@ -119,7 +119,7 @@
             editStudentsButton.Name = "editStudentsButton";
             editStudentsButton.Size = new Size(166, 42);
             editStudentsButton.TabIndex = 2;
-            editStudentsButton.Text = "Edit students (admin)";
+            editStudentsButton.Text = "Edit students";
             editStudentsButton.TextAlign = ContentAlignment.MiddleLeft;
             editStudentsButton.UseVisualStyleBackColor = true;
             editStudentsButton.Click += editStudentsButton_Click;

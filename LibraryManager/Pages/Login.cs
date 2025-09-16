@@ -102,10 +102,11 @@ namespace LibraryManager.Pages
                 // open the home page
                 incorrectCredentialsLabel.Visible = false;
                 emptyFieldLabel.Visible = false;
-                parentForm.openPage(new Pages.Home(), "Home");
 
                 // set isAdmin in MainForm to appropriate value
                 parentForm.IsAdmin = isAdmin;
+
+                parentForm.openPage(new Pages.Home(), "Home");
             }
             else
             {

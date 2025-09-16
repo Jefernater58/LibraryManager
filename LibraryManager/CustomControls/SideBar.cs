@@ -29,6 +29,12 @@ namespace LibraryManager.CustomControls
             // get the parent form of the control, when it loads, so that we can change the page
             parentForm = (MainForm?)FindForm();
 
+            if (!parentForm.IsAdmin)
+            {
+                editStudentsButton.Visible = false;
+                editStudentsIcon.Visible = false;
+            }
+
             // highlight the current form in the sidebar
             if (_currentFormIndex == 0)
             {
