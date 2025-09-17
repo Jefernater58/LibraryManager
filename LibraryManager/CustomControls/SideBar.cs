@@ -33,6 +33,8 @@ namespace LibraryManager.CustomControls
             {
                 editStudentsButton.Visible = false;
                 editStudentsIcon.Visible = false;
+                editUsersButton.Visible = false;
+                editUsersIcon.Visible = false;
             }
 
             // highlight the current form in the sidebar
@@ -66,6 +68,11 @@ namespace LibraryManager.CustomControls
                 editStudentsButton.ForeColor = highlightColor;
                 editStudentsIcon.ForeColor = highlightColor;
             }
+            else if (_currentFormIndex == 5)
+            {
+                editUsersButton.ForeColor = highlightColor;
+                editUsersIcon.ForeColor = highlightColor;
+            }
 
             base.OnLoad(e);
         }
@@ -97,12 +104,12 @@ namespace LibraryManager.CustomControls
 
         private void editStudentsButton_Click(object sender, EventArgs e)
         {
-            // ask the user to enter the administrator password
-            // TODO: check the database that the logged in user is an administrator
-            bool? result = true;
+            if (parentForm.IsAdmin) parentForm?.openPage(new Pages.EditStudents(), "Edit Students");
+        }
 
-            // only open the page if the password was entered correctly
-            if ((bool)result) parentForm?.openPage(new Pages.EditStudents(), "Edit Students");
+        private void editUsersButton_Click(object sender, EventArgs e)
+        {
+            if (parentForm.IsAdmin) parentForm?.openPage(new Pages.EditUsers(), "Edit Users");
         }
     }
 }

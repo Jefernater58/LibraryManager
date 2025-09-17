@@ -40,6 +40,8 @@
             searchBooksButton = new Button();
             searchStudentsButton = new Button();
             homeButton = new Button();
+            editUsersIcon = new Label();
+            editUsersButton = new Button();
             SuspendLayout();
             // 
             // editStudentsIcon
@@ -204,10 +206,39 @@
             homeButton.UseVisualStyleBackColor = true;
             homeButton.Click += homeButton_Click;
             // 
+            // editUsersIcon
+            // 
+            editUsersIcon.AutoSize = true;
+            editUsersIcon.Font = new Font("Segoe Fluent Icons", 15F);
+            editUsersIcon.ForeColor = Color.FromArgb(92, 95, 119);
+            editUsersIcon.Location = new Point(3, 328);
+            editUsersIcon.Name = "editUsersIcon";
+            editUsersIcon.Size = new Size(29, 20);
+            editUsersIcon.TabIndex = 17;
+            editUsersIcon.Text = "";
+            // 
+            // editUsersButton
+            // 
+            editUsersButton.FlatAppearance.BorderSize = 0;
+            editUsersButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(204, 208, 218);
+            editUsersButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 224, 232);
+            editUsersButton.FlatStyle = FlatStyle.Flat;
+            editUsersButton.ForeColor = Color.FromArgb(92, 95, 119);
+            editUsersButton.Location = new Point(32, 317);
+            editUsersButton.Name = "editUsersButton";
+            editUsersButton.Size = new Size(166, 42);
+            editUsersButton.TabIndex = 16;
+            editUsersButton.Text = "Edit users";
+            editUsersButton.TextAlign = ContentAlignment.MiddleLeft;
+            editUsersButton.UseVisualStyleBackColor = true;
+            editUsersButton.Click += editUsersButton_Click;
+            // 
             // SideBar
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
             BackColor = Color.FromArgb(220, 224, 232);
+            Controls.Add(editUsersIcon);
+            Controls.Add(editUsersButton);
             Controls.Add(editStudentsIcon);
             Controls.Add(editInventoryIcon);
             Controls.Add(checkInOutIcon);
@@ -240,5 +271,7 @@
         private Button searchBooksButton;
         private Button searchStudentsButton;
         private Button homeButton;
+        private Label editUsersIcon;
+        private Button editUsersButton;
     }
 }
