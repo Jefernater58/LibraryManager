@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             sideBar1 = new LibraryManager.CustomControls.SideBar();
-            removeBookButton = new Button();
-            addBookButton = new Button();
+            removeUserButton = new Button();
+            addUserButton = new Button();
             label2 = new Label();
             label1 = new Label();
             removeStudentIDTextBox = new CustomTextBox();
@@ -38,6 +38,8 @@
             addUserUsernameTextbox = new CustomTextBox();
             addUserConfirmPasswordTextbox = new CustomTextBox();
             addUserAdminCheckBox = new CheckBox();
+            emptyFieldLabel = new Label();
+            passwordMatchLabel = new Label();
             SuspendLayout();
             // 
             // sideBar1
@@ -49,37 +51,39 @@
             sideBar1.Size = new Size(198, 398);
             sideBar1.TabIndex = 0;
             // 
-            // removeBookButton
+            // removeUserButton
             // 
-            removeBookButton.BackColor = Color.FromArgb(79, 158, 235);
-            removeBookButton.FlatAppearance.BorderColor = Color.FromArgb(35, 133, 231);
-            removeBookButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(113, 176, 239);
-            removeBookButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(99, 168, 238);
-            removeBookButton.FlatStyle = FlatStyle.Flat;
-            removeBookButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            removeBookButton.ForeColor = Color.White;
-            removeBookButton.Location = new Point(508, 120);
-            removeBookButton.Name = "removeBookButton";
-            removeBookButton.Size = new Size(260, 36);
-            removeBookButton.TabIndex = 16;
-            removeBookButton.Text = "REMOVE";
-            removeBookButton.UseVisualStyleBackColor = false;
+            removeUserButton.BackColor = Color.FromArgb(79, 158, 235);
+            removeUserButton.FlatAppearance.BorderColor = Color.FromArgb(35, 133, 231);
+            removeUserButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(113, 176, 239);
+            removeUserButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(99, 168, 238);
+            removeUserButton.FlatStyle = FlatStyle.Flat;
+            removeUserButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            removeUserButton.ForeColor = Color.White;
+            removeUserButton.Location = new Point(508, 120);
+            removeUserButton.Name = "removeUserButton";
+            removeUserButton.Size = new Size(260, 36);
+            removeUserButton.TabIndex = 16;
+            removeUserButton.Text = "REMOVE";
+            removeUserButton.UseVisualStyleBackColor = false;
+            removeUserButton.Click += removeUserButton_click;
             // 
-            // addBookButton
+            // addUserButton
             // 
-            addBookButton.BackColor = Color.FromArgb(79, 158, 235);
-            addBookButton.FlatAppearance.BorderColor = Color.FromArgb(35, 133, 231);
-            addBookButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(113, 176, 239);
-            addBookButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(99, 168, 238);
-            addBookButton.FlatStyle = FlatStyle.Flat;
-            addBookButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            addBookButton.ForeColor = Color.White;
-            addBookButton.Location = new Point(229, 259);
-            addBookButton.Name = "addBookButton";
-            addBookButton.Size = new Size(260, 36);
-            addBookButton.TabIndex = 15;
-            addBookButton.Text = "ADD";
-            addBookButton.UseVisualStyleBackColor = false;
+            addUserButton.BackColor = Color.FromArgb(79, 158, 235);
+            addUserButton.FlatAppearance.BorderColor = Color.FromArgb(35, 133, 231);
+            addUserButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(113, 176, 239);
+            addUserButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(99, 168, 238);
+            addUserButton.FlatStyle = FlatStyle.Flat;
+            addUserButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            addUserButton.ForeColor = Color.White;
+            addUserButton.Location = new Point(229, 259);
+            addUserButton.Name = "addUserButton";
+            addUserButton.Size = new Size(260, 36);
+            addUserButton.TabIndex = 15;
+            addUserButton.Text = "ADD";
+            addUserButton.UseVisualStyleBackColor = false;
+            addUserButton.Click += addUserButton_click;
             // 
             // label2
             // 
@@ -162,14 +166,40 @@
             addUserAdminCheckBox.Text = "Administrator";
             addUserAdminCheckBox.UseVisualStyleBackColor = true;
             // 
+            // emptyFieldLabel
+            // 
+            emptyFieldLabel.AutoSize = true;
+            emptyFieldLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            emptyFieldLabel.ForeColor = Color.FromArgb(210, 15, 57);
+            emptyFieldLabel.Location = new Point(221, 305);
+            emptyFieldLabel.Name = "emptyFieldLabel";
+            emptyFieldLabel.Size = new Size(276, 15);
+            emptyFieldLabel.TabIndex = 19;
+            emptyFieldLabel.Text = "Username or Password fields must not be empty";
+            emptyFieldLabel.Visible = false;
+            // 
+            // passwordMatchLabel
+            // 
+            passwordMatchLabel.AutoSize = true;
+            passwordMatchLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            passwordMatchLabel.ForeColor = Color.FromArgb(210, 15, 57);
+            passwordMatchLabel.Location = new Point(275, 305);
+            passwordMatchLabel.Name = "passwordMatchLabel";
+            passwordMatchLabel.Size = new Size(165, 15);
+            passwordMatchLabel.TabIndex = 20;
+            passwordMatchLabel.Text = "The passwords do not match";
+            passwordMatchLabel.Visible = false;
+            // 
             // EditUsers
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
             BackColor = Color.FromArgb(239, 241, 245);
+            Controls.Add(passwordMatchLabel);
+            Controls.Add(emptyFieldLabel);
             Controls.Add(addUserAdminCheckBox);
             Controls.Add(addUserConfirmPasswordTextbox);
-            Controls.Add(removeBookButton);
-            Controls.Add(addBookButton);
+            Controls.Add(removeUserButton);
+            Controls.Add(addUserButton);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(removeStudentIDTextBox);
@@ -186,8 +216,8 @@
         #endregion
 
         private CustomControls.SideBar sideBar1;
-        private Button removeBookButton;
-        private Button addBookButton;
+        private Button removeUserButton;
+        private Button addUserButton;
         private Label label2;
         private Label label1;
         private CustomTextBox removeStudentIDTextBox;
@@ -195,5 +225,7 @@
         private CustomTextBox addUserUsernameTextbox;
         private CustomTextBox addUserConfirmPasswordTextbox;
         private CheckBox addUserAdminCheckBox;
+        private Label emptyFieldLabel;
+        private Label passwordMatchLabel;
     }
 }
