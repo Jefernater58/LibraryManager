@@ -33,13 +33,17 @@
             addUserButton = new Button();
             label2 = new Label();
             label1 = new Label();
-            removeStudentIDTextBox = new CustomTextBox();
+            removeUserUsernameTextBox = new CustomTextBox();
             addUserPasswordTextbox = new CustomTextBox();
             addUserUsernameTextbox = new CustomTextBox();
             addUserConfirmPasswordTextbox = new CustomTextBox();
             addUserAdminCheckBox = new CheckBox();
             emptyFieldLabel = new Label();
             passwordMatchLabel = new Label();
+            userExistsLabel = new Label();
+            userAddedLabel = new Label();
+            userDoesNotExistLabel = new Label();
+            userRemovedLabel = new Label();
             SuspendLayout();
             // 
             // sideBar1
@@ -107,17 +111,17 @@
             label1.TabIndex = 14;
             label1.Text = "Add a new user";
             // 
-            // removeStudentIDTextBox
+            // removeUserUsernameTextBox
             // 
-            removeStudentIDTextBox.BackColor = Color.FromArgb(204, 208, 218);
-            removeStudentIDTextBox.IconText = "";
-            removeStudentIDTextBox.Location = new Point(508, 66);
-            removeStudentIDTextBox.Name = "removeStudentIDTextBox";
-            removeStudentIDTextBox.PasswordChar = '\0';
-            removeStudentIDTextBox.Size = new Size(260, 36);
-            removeStudentIDTextBox.TabIndex = 10;
-            removeStudentIDTextBox.TextBoxPlaceholder = "UserID";
-            removeStudentIDTextBox.TextBoxText = "";
+            removeUserUsernameTextBox.BackColor = Color.FromArgb(204, 208, 218);
+            removeUserUsernameTextBox.IconText = "";
+            removeUserUsernameTextBox.Location = new Point(508, 66);
+            removeUserUsernameTextBox.Name = "removeUserUsernameTextBox";
+            removeUserUsernameTextBox.PasswordChar = '\0';
+            removeUserUsernameTextBox.Size = new Size(260, 36);
+            removeUserUsernameTextBox.TabIndex = 10;
+            removeUserUsernameTextBox.TextBoxPlaceholder = "Username";
+            removeUserUsernameTextBox.TextBoxText = "";
             // 
             // addUserPasswordTextbox
             // 
@@ -190,10 +194,62 @@
             passwordMatchLabel.Text = "The passwords do not match";
             passwordMatchLabel.Visible = false;
             // 
+            // userExistsLabel
+            // 
+            userExistsLabel.AutoSize = true;
+            userExistsLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            userExistsLabel.ForeColor = Color.FromArgb(210, 15, 57);
+            userExistsLabel.Location = new Point(243, 305);
+            userExistsLabel.Name = "userExistsLabel";
+            userExistsLabel.Size = new Size(229, 15);
+            userExistsLabel.TabIndex = 21;
+            userExistsLabel.Text = "A user with this username already exists";
+            userExistsLabel.Visible = false;
+            // 
+            // userAddedLabel
+            // 
+            userAddedLabel.AutoSize = true;
+            userAddedLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            userAddedLabel.ForeColor = Color.FromArgb(15, 210, 57);
+            userAddedLabel.Location = new Point(275, 305);
+            userAddedLabel.Name = "userAddedLabel";
+            userAddedLabel.Size = new Size(165, 15);
+            userAddedLabel.TabIndex = 22;
+            userAddedLabel.Text = "New user added successfully";
+            userAddedLabel.Visible = false;
+            // 
+            // userDoesNotExistLabel
+            // 
+            userDoesNotExistLabel.AutoSize = true;
+            userDoesNotExistLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            userDoesNotExistLabel.ForeColor = Color.FromArgb(210, 15, 57);
+            userDoesNotExistLabel.Location = new Point(548, 171);
+            userDoesNotExistLabel.Name = "userDoesNotExistLabel";
+            userDoesNotExistLabel.Size = new Size(189, 15);
+            userDoesNotExistLabel.TabIndex = 23;
+            userDoesNotExistLabel.Text = "The specified user does not exist";
+            userDoesNotExistLabel.Visible = false;
+            // 
+            // userRemovedLabel
+            // 
+            userRemovedLabel.AutoSize = true;
+            userRemovedLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            userRemovedLabel.ForeColor = Color.FromArgb(15, 210, 57);
+            userRemovedLabel.Location = new Point(562, 171);
+            userRemovedLabel.Name = "userRemovedLabel";
+            userRemovedLabel.Size = new Size(155, 15);
+            userRemovedLabel.TabIndex = 24;
+            userRemovedLabel.Text = "User removed successfully";
+            userRemovedLabel.Visible = false;
+            // 
             // EditUsers
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
             BackColor = Color.FromArgb(239, 241, 245);
+            Controls.Add(userRemovedLabel);
+            Controls.Add(userDoesNotExistLabel);
+            Controls.Add(userAddedLabel);
+            Controls.Add(userExistsLabel);
             Controls.Add(passwordMatchLabel);
             Controls.Add(emptyFieldLabel);
             Controls.Add(addUserAdminCheckBox);
@@ -202,7 +258,7 @@
             Controls.Add(addUserButton);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(removeStudentIDTextBox);
+            Controls.Add(removeUserUsernameTextBox);
             Controls.Add(addUserPasswordTextbox);
             Controls.Add(addUserUsernameTextbox);
             Controls.Add(sideBar1);
@@ -220,12 +276,16 @@
         private Button addUserButton;
         private Label label2;
         private Label label1;
-        private CustomTextBox removeStudentIDTextBox;
+        private CustomTextBox removeUserUsernameTextBox;
         private CustomTextBox addUserPasswordTextbox;
         private CustomTextBox addUserUsernameTextbox;
         private CustomTextBox addUserConfirmPasswordTextbox;
         private CheckBox addUserAdminCheckBox;
         private Label emptyFieldLabel;
         private Label passwordMatchLabel;
+        private Label userExistsLabel;
+        private Label userAddedLabel;
+        private Label userDoesNotExistLabel;
+        private Label userRemovedLabel;
     }
 }
