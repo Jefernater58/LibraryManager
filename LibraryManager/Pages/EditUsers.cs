@@ -1,5 +1,4 @@
 ﻿using Microsoft.Data.Sqlite;
-using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -134,5 +133,6 @@ namespace LibraryManager.Pages
 
                 userRemovedLabel.Visible = true;
             }
+        }
     }
 }

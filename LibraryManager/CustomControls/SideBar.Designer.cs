@@ -120,7 +120,7 @@
             editStudentsButton.Location = new Point(32, 356);
             editStudentsButton.Name = "editStudentsButton";
             editStudentsButton.Size = new Size(166, 42);
-            editStudentsButton.TabIndex = 2;
+            editStudentsButton.TabIndex = 6;
             editStudentsButton.Text = "Edit students";
             editStudentsButton.TextAlign = ContentAlignment.MiddleLeft;
             editStudentsButton.UseVisualStyleBackColor = true;
@@ -152,7 +152,7 @@
             checkInOutButton.Location = new Point(31, 126);
             checkInOutButton.Name = "checkInOutButton";
             checkInOutButton.Size = new Size(166, 42);
-            checkInOutButton.TabIndex = 5;
+            checkInOutButton.TabIndex = 3;
             checkInOutButton.Text = "Borrow / return books";
             checkInOutButton.TextAlign = ContentAlignment.MiddleLeft;
             checkInOutButton.UseVisualStyleBackColor = true;
@@ -168,7 +168,7 @@
             searchBooksButton.Location = new Point(31, 84);
             searchBooksButton.Name = "searchBooksButton";
             searchBooksButton.Size = new Size(166, 42);
-            searchBooksButton.TabIndex = 6;
+            searchBooksButton.TabIndex = 2;
             searchBooksButton.Text = "Search for books";
             searchBooksButton.TextAlign = ContentAlignment.MiddleLeft;
             searchBooksButton.UseVisualStyleBackColor = true;
@@ -184,7 +184,7 @@
             searchStudentsButton.Location = new Point(31, 42);
             searchStudentsButton.Name = "searchStudentsButton";
             searchStudentsButton.Size = new Size(166, 42);
-            searchStudentsButton.TabIndex = 7;
+            searchStudentsButton.TabIndex = 1;
             searchStudentsButton.Text = "Search for students";
             searchStudentsButton.TextAlign = ContentAlignment.MiddleLeft;
             searchStudentsButton.UseVisualStyleBackColor = true;
@@ -200,7 +200,7 @@
             homeButton.Location = new Point(31, 0);
             homeButton.Name = "homeButton";
             homeButton.Size = new Size(166, 42);
-            homeButton.TabIndex = 8;
+            homeButton.TabIndex = 0;
             homeButton.Text = "Home";
             homeButton.TextAlign = ContentAlignment.MiddleLeft;
             homeButton.UseVisualStyleBackColor = true;
@@ -227,7 +227,7 @@
             editUsersButton.Location = new Point(32, 317);
             editUsersButton.Name = "editUsersButton";
             editUsersButton.Size = new Size(166, 42);
-            editUsersButton.TabIndex = 16;
+            editUsersButton.TabIndex = 5;
             editUsersButton.Text = "Edit users";
             editUsersButton.TextAlign = ContentAlignment.MiddleLeft;
             editUsersButton.UseVisualStyleBackColor = true;

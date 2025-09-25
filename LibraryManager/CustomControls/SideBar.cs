@@ -68,7 +68,7 @@ namespace LibraryManager.CustomControls
                 editStudentsButton.ForeColor = highlightColor;
                 editStudentsIcon.ForeColor = highlightColor;
             }
-            else if (_currentFormIndex == 5)
+            else if (_currentFormIndex == 6)
             {
                 editUsersButton.ForeColor = highlightColor;
                 editUsersIcon.ForeColor = highlightColor;

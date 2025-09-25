@@ -67,7 +67,7 @@
             removeUserButton.Location = new Point(508, 120);
             removeUserButton.Name = "removeUserButton";
             removeUserButton.Size = new Size(260, 36);
-            removeUserButton.TabIndex = 16;
+            removeUserButton.TabIndex = 7;
             removeUserButton.Text = "REMOVE";
             removeUserButton.UseVisualStyleBackColor = false;
             removeUserButton.Click += removeUserButton_click;
@@ -84,7 +84,7 @@
             addUserButton.Location = new Point(229, 259);
             addUserButton.Name = "addUserButton";
             addUserButton.Size = new Size(260, 36);
-            addUserButton.TabIndex = 15;
+            addUserButton.TabIndex = 5;
             addUserButton.Text = "ADD";
             addUserButton.UseVisualStyleBackColor = false;
             addUserButton.Click += addUserButton_click;
@@ -119,7 +119,7 @@
             removeUserUsernameTextBox.Name = "removeUserUsernameTextBox";
             removeUserUsernameTextBox.PasswordChar = '\0';
             removeUserUsernameTextBox.Size = new Size(260, 36);
-            removeUserUsernameTextBox.TabIndex = 10;
+            removeUserUsernameTextBox.TabIndex = 6;
             removeUserUsernameTextBox.TextBoxPlaceholder = "Username";
             removeUserUsernameTextBox.TextBoxText = "";
             // 
@@ -131,7 +131,7 @@
             addUserPasswordTextbox.Name = "addUserPasswordTextbox";
             addUserPasswordTextbox.PasswordChar = '•';
             addUserPasswordTextbox.Size = new Size(260, 36);
-            addUserPasswordTextbox.TabIndex = 11;
+            addUserPasswordTextbox.TabIndex = 2;
             addUserPasswordTextbox.TextBoxPlaceholder = "Password";
             addUserPasswordTextbox.TextBoxText = "";
             // 
@@ -143,7 +143,7 @@
             addUserUsernameTextbox.Name = "addUserUsernameTextbox";
             addUserUsernameTextbox.PasswordChar = '\0';
             addUserUsernameTextbox.Size = new Size(260, 36);
-            addUserUsernameTextbox.TabIndex = 12;
+            addUserUsernameTextbox.TabIndex = 1;
             addUserUsernameTextbox.TextBoxPlaceholder = "Username";
             addUserUsernameTextbox.TextBoxText = "";
             // 
@@ -155,7 +155,7 @@
             addUserConfirmPasswordTextbox.Name = "addUserConfirmPasswordTextbox";
             addUserConfirmPasswordTextbox.PasswordChar = '•';
             addUserConfirmPasswordTextbox.Size = new Size(260, 36);
-            addUserConfirmPasswordTextbox.TabIndex = 17;
+            addUserConfirmPasswordTextbox.TabIndex = 3;
             addUserConfirmPasswordTextbox.TextBoxPlaceholder = "Confirm Password";
             addUserConfirmPasswordTextbox.TextBoxText = "";
             // 
@@ -166,7 +166,7 @@
             addUserAdminCheckBox.Location = new Point(311, 222);
             addUserAdminCheckBox.Name = "addUserAdminCheckBox";
             addUserAdminCheckBox.Size = new Size(99, 19);
-            addUserAdminCheckBox.TabIndex = 18;
+            addUserAdminCheckBox.TabIndex = 4;
             addUserAdminCheckBox.Text = "Administrator";
             addUserAdminCheckBox.UseVisualStyleBackColor = true;
             // 
