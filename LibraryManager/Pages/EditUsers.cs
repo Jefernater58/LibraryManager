@@ -89,7 +89,7 @@ namespace LibraryManager.Pages
 
                 userAddedLabel.Visible = true;
             }
-            }
+        }
 
         private void removeUserButton_click(object sender, EventArgs e)
         {
@@ -122,14 +122,14 @@ namespace LibraryManager.Pages
                 }
 
                 // remove the user
-                var addUserCmd = connection.CreateCommand();
-                addUserCmd.CommandText =
+                var removeUserCmd = connection.CreateCommand();
+                removeUserCmd.CommandText =
                 @"
                     DELETE FROM Users
                     WHERE Name = $username;
                 ";
-                addUserCmd.Parameters.AddWithValue("$username", username);
-                addUserCmd.ExecuteNonQuery();
+                removeUserCmd.Parameters.AddWithValue("$username", username);
+                removeUserCmd.ExecuteNonQuery();
 
                 userRemovedLabel.Visible = true;
             }
