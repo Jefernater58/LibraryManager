@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            sideBar1 = new CustomControls.SideBar();
+            sideBar1 = new LibraryManager.CustomControls.SideBar();
             newBookTitleTextBox = new CustomTextBox();
             label1 = new Label();
             removeBookIDTextBox = new CustomTextBox();
@@ -36,6 +36,10 @@
             addBookAuthorTextBox = new CustomTextBox();
             addBookButton = new Button();
             removeBookButton = new Button();
+            bookAddedLabel = new Label();
+            emptyFieldLabel = new Label();
+            bookRemovedLabel = new Label();
+            bookDoesNotExistLabel = new Label();
             SuspendLayout();
             // 
             // sideBar1
@@ -120,6 +124,7 @@
             addBookButton.TabIndex = 8;
             addBookButton.Text = "ADD";
             addBookButton.UseVisualStyleBackColor = false;
+            addBookButton.Click += addBookButton_Click;
             // 
             // removeBookButton
             // 
@@ -136,11 +141,64 @@
             removeBookButton.TabIndex = 9;
             removeBookButton.Text = "REMOVE";
             removeBookButton.UseVisualStyleBackColor = false;
+            removeBookButton.Click += removeBookButton_Click;
+            // 
+            // bookAddedLabel
+            // 
+            bookAddedLabel.AutoSize = true;
+            bookAddedLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            bookAddedLabel.ForeColor = Color.FromArgb(15, 210, 57);
+            bookAddedLabel.Location = new Point(273, 216);
+            bookAddedLabel.Name = "bookAddedLabel";
+            bookAddedLabel.Size = new Size(169, 15);
+            bookAddedLabel.TabIndex = 28;
+            bookAddedLabel.Text = "New book added successfully";
+            bookAddedLabel.Visible = false;
+            // 
+            // emptyFieldLabel
+            // 
+            emptyFieldLabel.AutoSize = true;
+            emptyFieldLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            emptyFieldLabel.ForeColor = Color.FromArgb(210, 15, 57);
+            emptyFieldLabel.Location = new Point(285, 216);
+            emptyFieldLabel.Name = "emptyFieldLabel";
+            emptyFieldLabel.Size = new Size(147, 15);
+            emptyFieldLabel.TabIndex = 29;
+            emptyFieldLabel.Text = "Fields must not be empty";
+            emptyFieldLabel.Visible = false;
+            // 
+            // bookRemovedLabel
+            // 
+            bookRemovedLabel.AutoSize = true;
+            bookRemovedLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            bookRemovedLabel.ForeColor = Color.FromArgb(15, 210, 57);
+            bookRemovedLabel.Location = new Point(553, 160);
+            bookRemovedLabel.Name = "bookRemovedLabel";
+            bookRemovedLabel.Size = new Size(158, 15);
+            bookRemovedLabel.TabIndex = 31;
+            bookRemovedLabel.Text = "Book removed successfully";
+            bookRemovedLabel.Visible = false;
+            // 
+            // bookDoesNotExistLabel
+            // 
+            bookDoesNotExistLabel.AutoSize = true;
+            bookDoesNotExistLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            bookDoesNotExistLabel.ForeColor = Color.FromArgb(210, 15, 57);
+            bookDoesNotExistLabel.Location = new Point(546, 160);
+            bookDoesNotExistLabel.Name = "bookDoesNotExistLabel";
+            bookDoesNotExistLabel.Size = new Size(193, 15);
+            bookDoesNotExistLabel.TabIndex = 30;
+            bookDoesNotExistLabel.Text = "The specified book does not exist";
+            bookDoesNotExistLabel.Visible = false;
             // 
             // EditInventory
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
             BackColor = Color.FromArgb(239, 241, 245);
+            Controls.Add(bookRemovedLabel);
+            Controls.Add(bookDoesNotExistLabel);
+            Controls.Add(emptyFieldLabel);
+            Controls.Add(bookAddedLabel);
             Controls.Add(removeBookButton);
             Controls.Add(addBookButton);
             Controls.Add(label2);
@@ -166,5 +224,9 @@
         private CustomTextBox addBookAuthorTextBox;
         private Button addBookButton;
         private Button removeBookButton;
+        private Label bookAddedLabel;
+        private Label emptyFieldLabel;
+        private Label bookRemovedLabel;
+        private Label bookDoesNotExistLabel;
     }
 }
