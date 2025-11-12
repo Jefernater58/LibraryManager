@@ -36,6 +36,9 @@
             successLabel = new Label();
             alreadyCheckedInLabel = new Label();
             label1 = new Label();
+            studentDoesNotExistLabel = new Label();
+            bookDoesNotExistLabel = new Label();
+            bookNotBorrowedLabel = new Label();
             SuspendLayout();
             // 
             // sideBar1
@@ -141,10 +144,49 @@
             label1.Text = "Error! This book is already borrowed";
             label1.Visible = false;
             // 
+            // studentDoesNotExistLabel
+            // 
+            studentDoesNotExistLabel.AutoSize = true;
+            studentDoesNotExistLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            studentDoesNotExistLabel.ForeColor = Color.FromArgb(210, 15, 57);
+            studentDoesNotExistLabel.Location = new Point(384, 261);
+            studentDoesNotExistLabel.Name = "studentDoesNotExistLabel";
+            studentDoesNotExistLabel.Size = new Size(212, 15);
+            studentDoesNotExistLabel.TabIndex = 20;
+            studentDoesNotExistLabel.Text = "The specified student does not exist!";
+            studentDoesNotExistLabel.Visible = false;
+            // 
+            // bookDoesNotExistLabel
+            // 
+            bookDoesNotExistLabel.AutoSize = true;
+            bookDoesNotExistLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            bookDoesNotExistLabel.ForeColor = Color.FromArgb(210, 15, 57);
+            bookDoesNotExistLabel.Location = new Point(393, 261);
+            bookDoesNotExistLabel.Name = "bookDoesNotExistLabel";
+            bookDoesNotExistLabel.Size = new Size(197, 15);
+            bookDoesNotExistLabel.TabIndex = 21;
+            bookDoesNotExistLabel.Text = "The specified book does not exist!";
+            bookDoesNotExistLabel.Visible = false;
+            // 
+            // bookNotBorrowedLabel
+            // 
+            bookNotBorrowedLabel.AutoSize = true;
+            bookNotBorrowedLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            bookNotBorrowedLabel.ForeColor = Color.FromArgb(210, 15, 57);
+            bookNotBorrowedLabel.Location = new Point(393, 261);
+            bookNotBorrowedLabel.Name = "bookNotBorrowedLabel";
+            bookNotBorrowedLabel.Size = new Size(234, 15);
+            bookNotBorrowedLabel.TabIndex = 22;
+            bookNotBorrowedLabel.Text = "This student has not borrowed this book!";
+            bookNotBorrowedLabel.Visible = false;
+            // 
             // CheckInOut
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
             BackColor = Color.FromArgb(239, 241, 245);
+            Controls.Add(bookNotBorrowedLabel);
+            Controls.Add(bookDoesNotExistLabel);
+            Controls.Add(studentDoesNotExistLabel);
             Controls.Add(label1);
             Controls.Add(alreadyCheckedInLabel);
             Controls.Add(successLabel);
@@ -170,5 +212,8 @@
         private Label successLabel;
         private Label alreadyCheckedInLabel;
         private Label label1;
+        private Label studentDoesNotExistLabel;
+        private Label bookDoesNotExistLabel;
+        private Label bookNotBorrowedLabel;
     }
 }
