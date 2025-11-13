@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.Sqlite;
+using System.Diagnostics;
 
 namespace LibraryManager.Pages
 {
@@ -37,21 +38,44 @@ namespace LibraryManager.Pages
                 connection.Open();
 
                 // check if the student has borrowed the book
-                var userExistsCmd = connection.CreateCommand();
-                userExistsCmd.CommandText =
+                var bookBorrowedCmd = connection.CreateCommand();
+                bookBorrowedCmd.CommandText =
                 @"
                     SELECT COUNT(*) FROM Books
                     WHERE CheckedOutStudentId = $studentid;
                     WHERE Id = $bookid;
                 ";
-                userExistsCmd.Parameters.AddWithValue("$studentid", int.Parse(studentIdString));
-                userExistsCmd.Parameters.AddWithValue("$bookid", int.Parse(bookIdString));
-                long result = (long)userExistsCmd.ExecuteScalar();
+                bookBorrowedCmd.Parameters.AddWithValue("$studentid", int.Parse(studentIdString));
+                bookBorrowedCmd.Parameters.AddWithValue("$bookid", int.Parse(bookIdString));
+                long result = (long)bookBorrowedCmd.ExecuteScalar();
 
                 if (result < 1)
                 {
                     bookNotBorrowedLabel.Visible = true;
                     return;
+                }
+
+                // get information about the borrowed book
+                var infoCmd = connection.CreateCommand();
+                infoCmd.CommandText =
+                @"
+                    SELECT CheckedOutDate, CheckedOutStudentId
+                    FROM Books
+                    WHERE Id = $bookid;
+                ";
+                infoCmd.Parameters.AddWithValue("$bookid", int.Parse(bookIdString));
+                using (var reader = infoCmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        var checkedOutDate = reader["CheckedOutDate"];
+                        var studentId = reader["CheckedOutStudentId"];
+                        Debug.WriteLine($"{checkedOutDate}, {studentId}");
+                    }
+                    else
+                    {
+                        Debug.WriteLine("No record found");
+                    }
                 }
 
                 // get checked out date, compare to current date. add to amount owed if overdue
