@@ -68,7 +68,10 @@ namespace LibraryManager.Pages
                 {
                     if (reader.Read())
                     {
-                        var checkedOutDate = reader["CheckedOutDate"];
+                        DateTime checkedOutDate = Convert.ToDateTime(reader["CheckedOutDate"]);
+                        DateTime now = DateTime.Now;
+
+
                         var studentId = reader["CheckedOutStudentId"];
                         Debug.WriteLine($"{checkedOutDate}, {studentId}");
                     }
