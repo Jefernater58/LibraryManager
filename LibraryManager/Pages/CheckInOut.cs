@@ -75,6 +75,7 @@ namespace LibraryManager.Pages
                 ";
                 infoCmd.Parameters.AddWithValue("$bookid", int.Parse(bookIdString));
 
+                // cast the data to usable types
                 DateTime checkedOutDate;
                 DateTime now;
                 long studentId;
@@ -82,6 +83,7 @@ namespace LibraryManager.Pages
                 {
                     if (reader.Read())
                     {
+                        // cancel operation if the book isnt borrowed
                         if ((long)reader["CheckedOut"] == 0)
                         {
                             bookNotBorrowedLabel.Visible = true;
@@ -91,7 +93,13 @@ namespace LibraryManager.Pages
                         checkedOutDate = Convert.ToDateTime(reader["CheckedOutDate"]);
                         now = DateTime.Now;
 
+                        // if the user is wrong, cancel
                         studentId = (long) reader["CheckedOutStudentId"];
+                        if (studentId != studentIdInt)
+                        {
+                            bookNotBorrowedLabel.Visible = true;
+                            return;
+                        }
                     }
                     else
                     {
@@ -103,11 +111,13 @@ namespace LibraryManager.Pages
                 int checkedOutDays = (now - checkedOutDate).Days;
                 bool overdue = checkedOutDays > parentForm.MaxBorrowDays;
 
+                // calculate the overdue fee if the book is overdue
                 if (overdue)
                 {
                     float overdueFee = parentForm.OverdueDailyFee * (checkedOutDays - parentForm.MaxBorrowDays);
                     if (overdueFee > parentForm.OverdueMaxFee) overdueFee = parentForm.OverdueMaxFee;
 
+                    // display to the user
                     bookOverdueLabel.Visible = true;
                     bookOverdueLabel.Text = $"This book has been returned {checkedOutDays - parentForm.MaxBorrowDays} days late. Please collect £{overdueFee:0.00}";
                 }
