@@ -5,9 +5,17 @@ namespace LibraryManager.Pages
 {
     public partial class CheckInOut : UserControl
     {
+        private MainForm? parentForm;
+
         public CheckInOut()
         {
             InitializeComponent();
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            parentForm = (MainForm?)FindForm();
         }
 
         private void checkInButton_Click(object sender, EventArgs e)
@@ -15,6 +23,7 @@ namespace LibraryManager.Pages
             bookDoesNotExistLabel.Visible = false;
             studentDoesNotExistLabel.Visible = false;
             bookNotBorrowedLabel.Visible = false;
+            bookOverdueLabel.Visible = false;
 
             string studentIdString = studentIDTextBox.TextBoxText;
             string bookIdString = bookIDTextBox.TextBoxText;
@@ -64,24 +73,41 @@ namespace LibraryManager.Pages
                     WHERE Id = $bookid;
                 ";
                 infoCmd.Parameters.AddWithValue("$bookid", int.Parse(bookIdString));
+
+                DateTime checkedOutDate;
+                DateTime now;
+                long studentId;
                 using (var reader = infoCmd.ExecuteReader())
                 {
                     if (reader.Read())
                     {
-                        DateTime checkedOutDate = Convert.ToDateTime(reader["CheckedOutDate"]);
-                        DateTime now = DateTime.Now;
+                        checkedOutDate = Convert.ToDateTime(reader["CheckedOutDate"]);
+                        now = DateTime.Now;
 
-
-                        var studentId = reader["CheckedOutStudentId"];
-                        Debug.WriteLine($"{checkedOutDate}, {studentId}");
+                        studentId = (long) reader["CheckedOutStudentId"];
                     }
                     else
                     {
                         Debug.WriteLine("No record found");
+                        return;
                     }
                 }
 
-                // get checked out date, compare to current date. add to amount owed if overdue
+                int checkedOutDays = (now - checkedOutDate).Days;
+                bool overdue = checkedOutDays > parentForm.MaxBorrowDays;
+                Debug.WriteLine($"{checkedOutDays}, {overdue}");
+
+                if (overdue)
+                {
+                    float overdueFee = parentForm.OverdueDailyFee * (checkedOutDays - parentForm.MaxBorrowDays);
+                    if (overdueFee > parentForm.OverdueMaxFee)
+                    {
+                        overdueFee = parentForm.OverdueMaxFee;
+                    }
+                    Debug.WriteLine($"{overdueFee}");
+                    bookOverdueLabel.Visible = true;
+                    bookOverdueLabel.Text = $"This book has been returned {checkedOutDays - parentForm.MaxBorrowDays} days late. Please collect £{overdueFee:0.00}";
+                }
                 // update the database
                 // show appropriate message to the user
             }

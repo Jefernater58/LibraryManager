@@ -1,3 +1,5 @@
+using System.Xml.Linq;
+
 namespace LibraryManager
 {
     public partial class MainForm : Form
@@ -6,6 +8,28 @@ namespace LibraryManager
         private const string windowTitle = "Library Manager";
         // the page to open on startup
         private UserControl startPage = new Pages.Login();
+
+        // some config
+        private int maxBorrowDays = 7;
+        public int MaxBorrowDays
+        {
+            get { return maxBorrowDays; }
+            set { maxBorrowDays = value; }
+        }
+
+        private float overdueDailyFee = 0.5f;
+        public float OverdueDailyFee
+        {
+            get { return overdueDailyFee; }
+            set { overdueDailyFee = value; }
+        }
+        private float overdueMaxFee = 5.0f;
+        public float OverdueMaxFee
+        {
+            get { return overdueMaxFee; }
+            set { overdueMaxFee = value; }
+        }
+
 
         private bool isAdmin;
         public bool IsAdmin
