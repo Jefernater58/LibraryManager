@@ -40,6 +40,7 @@
             bookDoesNotExistLabel = new Label();
             bookNotBorrowedLabel = new Label();
             bookOverdueLabel = new Label();
+            bookReturnedLabel = new Label();
             SuspendLayout();
             // 
             // sideBar1
@@ -193,10 +194,23 @@
             bookOverdueLabel.Text = "This book has been returned x days late. Overdue fee: £y";
             bookOverdueLabel.Visible = false;
             // 
+            // bookReturnedLabel
+            // 
+            bookReturnedLabel.AutoSize = true;
+            bookReturnedLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            bookReturnedLabel.ForeColor = Color.FromArgb(15, 210, 57);
+            bookReturnedLabel.Location = new Point(429, 261);
+            bookReturnedLabel.Name = "bookReturnedLabel";
+            bookReturnedLabel.Size = new Size(161, 15);
+            bookReturnedLabel.TabIndex = 24;
+            bookReturnedLabel.Text = "Book returned successfully!";
+            bookReturnedLabel.Visible = false;
+            // 
             // CheckInOut
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
             BackColor = Color.FromArgb(239, 241, 245);
+            Controls.Add(bookReturnedLabel);
             Controls.Add(bookOverdueLabel);
             Controls.Add(bookNotBorrowedLabel);
             Controls.Add(bookDoesNotExistLabel);
@@ -230,5 +244,6 @@
         private Label bookDoesNotExistLabel;
         private Label bookNotBorrowedLabel;
         private Label bookOverdueLabel;
+        private Label bookReturnedLabel;
     }
 }

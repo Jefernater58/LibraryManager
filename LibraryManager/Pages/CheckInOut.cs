@@ -24,6 +24,7 @@ namespace LibraryManager.Pages
             studentDoesNotExistLabel.Visible = false;
             bookNotBorrowedLabel.Visible = false;
             bookOverdueLabel.Visible = false;
+            bookReturnedLabel.Visible = false;
 
             string studentIdString = studentIDTextBox.TextBoxText;
             string bookIdString = bookIDTextBox.TextBoxText;
@@ -68,7 +69,7 @@ namespace LibraryManager.Pages
                 var infoCmd = connection.CreateCommand();
                 infoCmd.CommandText =
                 @"
-                    SELECT CheckedOutDate, CheckedOutStudentId
+                    SELECT CheckedOut, CheckedOutDate, CheckedOutStudentId
                     FROM Books
                     WHERE Id = $bookid;
                 ";
@@ -81,6 +82,12 @@ namespace LibraryManager.Pages
                 {
                     if (reader.Read())
                     {
+                        if ((long)reader["CheckedOut"] == 0)
+                        {
+                            bookNotBorrowedLabel.Visible = true;
+                            return;
+                        }
+
                         checkedOutDate = Convert.ToDateTime(reader["CheckedOutDate"]);
                         now = DateTime.Now;
 
@@ -95,21 +102,29 @@ namespace LibraryManager.Pages
 
                 int checkedOutDays = (now - checkedOutDate).Days;
                 bool overdue = checkedOutDays > parentForm.MaxBorrowDays;
-                Debug.WriteLine($"{checkedOutDays}, {overdue}");
 
                 if (overdue)
                 {
                     float overdueFee = parentForm.OverdueDailyFee * (checkedOutDays - parentForm.MaxBorrowDays);
-                    if (overdueFee > parentForm.OverdueMaxFee)
-                    {
-                        overdueFee = parentForm.OverdueMaxFee;
-                    }
-                    Debug.WriteLine($"{overdueFee}");
+                    if (overdueFee > parentForm.OverdueMaxFee) overdueFee = parentForm.OverdueMaxFee;
+
                     bookOverdueLabel.Visible = true;
                     bookOverdueLabel.Text = $"This book has been returned {checkedOutDays - parentForm.MaxBorrowDays} days late. Please collect £{overdueFee:0.00}";
                 }
+
                 // update the database
+                var removeBorrowedBookCmd = connection.CreateCommand();
+                removeBorrowedBookCmd.CommandText =
+                @"
+                    UPDATE Books
+                    SET CheckedOut=0, CheckedOutDate=null, CheckedOutStudentId=null
+                    WHERE Id=$BookID
+                ";
+                removeBorrowedBookCmd.Parameters.AddWithValue("$BookID", bookIdInt);
+                removeBorrowedBookCmd.ExecuteNonQuery();
+
                 // show appropriate message to the user
+                bookReturnedLabel.Visible = true;
             }
         }
 
