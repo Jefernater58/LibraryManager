@@ -1,5 +1,7 @@
 ﻿using Microsoft.Data.Sqlite;
+using System.Data;
 using System.Diagnostics;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace LibraryManager.Pages
 {
@@ -24,6 +26,8 @@ namespace LibraryManager.Pages
             studentDoesNotExistLabel.Visible = false;
             bookNotBorrowedLabel.Visible = false;
             bookOverdueLabel.Visible = false;
+            bookAlreadyBorrowedLabel.Visible = false;
+            bookBorrowedLabel.Visible = false;
             bookReturnedLabel.Visible = false;
 
             string studentIdString = studentIDTextBox.TextBoxText;
@@ -52,8 +56,7 @@ namespace LibraryManager.Pages
                 bookBorrowedCmd.CommandText =
                 @"
                     SELECT COUNT(*) FROM Books
-                    WHERE CheckedOutStudentId = $studentid;
-                    WHERE Id = $bookid;
+                    WHERE CheckedOutStudentId = $studentid AND Id = $bookid;
                 ";
                 bookBorrowedCmd.Parameters.AddWithValue("$studentid", int.Parse(studentIdString));
                 bookBorrowedCmd.Parameters.AddWithValue("$bookid", int.Parse(bookIdString));
@@ -140,10 +143,70 @@ namespace LibraryManager.Pages
 
         private void checkOutButton_Click(object sender, EventArgs e)
         {
+            bookDoesNotExistLabel.Visible = false;
+            studentDoesNotExistLabel.Visible = false;
+            bookNotBorrowedLabel.Visible = false;
+            bookOverdueLabel.Visible = false;
+            bookAlreadyBorrowedLabel.Visible = false;
+            bookBorrowedLabel.Visible = false;
+            bookReturnedLabel.Visible = false; 
+
             string studentIdString = studentIDTextBox.TextBoxText;
             string bookIdString = bookIDTextBox.TextBoxText;
             // check database if the book is checked in and update the database
             // show appropriate message to the user
+
+            // validate id
+            if (!int.TryParse(bookIdString, out int bookIdInt))
+            {
+                bookDoesNotExistLabel.Visible = true;
+                return;
+            }
+            if (!int.TryParse(studentIdString, out int studentIdInt))
+            {
+                studentDoesNotExistLabel.Visible = true;
+                return;
+            }
+
+            // connect to the database
+            string connectionString = "Data Source=db.sqlite";
+            using (var connection = new SqliteConnection(connectionString))
+            {
+                connection.Open();
+
+                // check if the student has borrowed the book
+                var bookBorrowedCmd = connection.CreateCommand();
+                bookBorrowedCmd.CommandText =
+                @"
+                    SELECT COUNT(*) FROM Books
+                    WHERE CheckedOutStudentId = $studentid AND Id = $bookid;
+                ";
+                bookBorrowedCmd.Parameters.AddWithValue("$studentid", int.Parse(studentIdString));
+                bookBorrowedCmd.Parameters.AddWithValue("$bookid", int.Parse(bookIdString));
+                long result = (long)bookBorrowedCmd.ExecuteScalar();
+
+                if (result > 0)
+                {
+                    bookAlreadyBorrowedLabel.Visible = true;
+                    return;
+                }
+
+                // update database
+                var addBorrowedBookCmd = connection.CreateCommand();
+                addBorrowedBookCmd.CommandText =
+                @"
+                    UPDATE Books
+                    SET CheckedOut=1, CheckedOutDate=DATE(@date), CheckedOutStudentId=$studentID
+                    WHERE Id=$BookID
+                ";
+                addBorrowedBookCmd.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy-MM-dd"));
+                addBorrowedBookCmd.Parameters.AddWithValue("$BookID", bookIdInt);
+                addBorrowedBookCmd.Parameters.AddWithValue("$studentID", studentIdInt);
+                addBorrowedBookCmd.ExecuteNonQuery();
+
+                // show appropriate message to the user
+                bookBorrowedLabel.Visible = true;
+            }
         }
     }
 }

@@ -41,6 +41,8 @@
             bookNotBorrowedLabel = new Label();
             bookOverdueLabel = new Label();
             bookReturnedLabel = new Label();
+            bookAlreadyBorrowedLabel = new Label();
+            bookBorrowedLabel = new Label();
             SuspendLayout();
             // 
             // sideBar1
@@ -206,10 +208,36 @@
             bookReturnedLabel.Text = "Book returned successfully!";
             bookReturnedLabel.Visible = false;
             // 
+            // bookAlreadyBorrowedLabel
+            // 
+            bookAlreadyBorrowedLabel.AutoSize = true;
+            bookAlreadyBorrowedLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            bookAlreadyBorrowedLabel.ForeColor = Color.FromArgb(210, 15, 57);
+            bookAlreadyBorrowedLabel.Location = new Point(361, 261);
+            bookAlreadyBorrowedLabel.Name = "bookAlreadyBorrowedLabel";
+            bookAlreadyBorrowedLabel.Size = new Size(284, 15);
+            bookAlreadyBorrowedLabel.TabIndex = 25;
+            bookAlreadyBorrowedLabel.Text = "This book has already been borrowed by a student";
+            bookAlreadyBorrowedLabel.Visible = false;
+            // 
+            // bookBorrowedLabel
+            // 
+            bookBorrowedLabel.AutoSize = true;
+            bookBorrowedLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            bookBorrowedLabel.ForeColor = Color.FromArgb(15, 210, 57);
+            bookBorrowedLabel.Location = new Point(415, 261);
+            bookBorrowedLabel.Name = "bookBorrowedLabel";
+            bookBorrowedLabel.Size = new Size(166, 15);
+            bookBorrowedLabel.TabIndex = 26;
+            bookBorrowedLabel.Text = "Book borrowed successfully!";
+            bookBorrowedLabel.Visible = false;
+            // 
             // CheckInOut
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
             BackColor = Color.FromArgb(239, 241, 245);
+            Controls.Add(bookBorrowedLabel);
+            Controls.Add(bookAlreadyBorrowedLabel);
             Controls.Add(bookReturnedLabel);
             Controls.Add(bookOverdueLabel);
             Controls.Add(bookNotBorrowedLabel);
@@ -245,5 +273,7 @@
         private Label bookNotBorrowedLabel;
         private Label bookOverdueLabel;
         private Label bookReturnedLabel;
+        private Label bookAlreadyBorrowedLabel;
+        private Label bookBorrowedLabel;
     }
 }
