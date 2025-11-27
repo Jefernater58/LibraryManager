@@ -122,7 +122,8 @@ namespace LibraryManager.Pages
 
                     // display to the user
                     bookOverdueLabel.Visible = true;
-                    bookOverdueLabel.Text = $"This book has been returned {checkedOutDays - parentForm.MaxBorrowDays} days late. Please collect £{overdueFee:0.00}";
+                    bookOverdueLabel.Text = $"This book has been returned {checkedOutDays - parentForm.MaxBorrowDays} days late." +
+                        $"Please collect £{overdueFee:0.00}";
                 }
 
                 // update the database
@@ -153,8 +154,6 @@ namespace LibraryManager.Pages
 
             string studentIdString = studentIDTextBox.TextBoxText;
             string bookIdString = bookIDTextBox.TextBoxText;
-            // check database if the book is checked in and update the database
-            // show appropriate message to the user
 
             // validate id
             if (!int.TryParse(bookIdString, out int bookIdInt))
