@@ -139,6 +139,8 @@ namespace LibraryManager.Pages
 
                 // show appropriate message to the user
                 bookReturnedLabel.Visible = true;
+
+                // TODO: give option to add rating to the book
             }
         }
 
