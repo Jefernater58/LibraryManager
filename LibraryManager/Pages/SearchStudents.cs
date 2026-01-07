@@ -1,4 +1,6 @@
-﻿namespace LibraryManager.Pages
+﻿using Microsoft.Data.Sqlite;
+
+namespace LibraryManager.Pages
 {
     public partial class SearchStudents : UserControl
     {
@@ -6,20 +8,83 @@
         {
             InitializeComponent();
 
-            // temporary to show the design
-            dataGrid.Rows.Add(0, "John Smith", 7);
-            dataGrid.Rows.Add(1, "Jane Doe", 8);
-            dataGrid.Rows.Add(2, "Alice Johnson", 9);
-            dataGrid.Rows.Add(3, "Bob Brown", 10);
-            dataGrid.Rows.Add(4, "Charlie White", 11);
-            dataGrid.Rows.Add(5, "Daisy Green", 12);
-            dataGrid.Rows.Add(6, "Eve Black", 7);
-            dataGrid.Rows.Add(7, "Frank Blue", 8);
-            dataGrid.Rows.Add(8, "Grace Yellow", 9);
-            dataGrid.Rows.Add(9, "Hank Purple", 10);
-            dataGrid.Rows.Add(10, "Ivy Orange", 11);
+            StudentEntry[] data = loadData();
 
-            // TODO: add search functionality to search the database for students
+            // add the students to the displayed list
+            for (int i = 0; i < data.Length; i++)
+            {
+                StudentEntry entry = data[i];
+
+                dataGrid.Rows.Add(entry.Id, entry.FirstName + " " + entry.LastName, "£" + entry.AmountOwed.ToString());
+            }
+        }
+
+        StudentEntry[] loadData()
+        {
+            // connect to the database
+            string connectionString = "Data Source=db.sqlite";
+            using (var connection = new SqliteConnection(connectionString))
+            {
+                connection.Open();
+
+                // create a command to get all students from the database table
+                var getStudentsCmd = connection.CreateCommand();
+                getStudentsCmd.CommandText =
+                @"
+                    SELECT * FROM Students;
+                ";
+
+                // iterate through results and create objects to use in code
+                StudentEntry[] allRecords;
+                List<StudentEntry> list = new List<StudentEntry>();
+                using (var reader = getStudentsCmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new StudentEntry(reader.GetInt64(0),
+                                               reader.GetString(1),
+                                               reader.GetString(2),
+                                               reader.GetFloat(3)));
+                    }
+
+                    allRecords = list.ToArray();
+                }
+
+                // return the data
+                return allRecords;
+            }
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            string query = searchTextBox.TextBoxText;
+            StudentEntry[] data = loadData();
+
+            dataGrid.Rows.Clear();
+            for (int i = 0; i < data.Length; i++)
+            {
+                StudentEntry entry = data[i];
+                if (query == "" || (entry.FirstName + " " + entry.LastName).ToLower().Contains(query.ToLower()))
+                {
+                    dataGrid.Rows.Add(entry.Id, entry.FirstName + " " + entry.LastName, "£" + entry.AmountOwed.ToString());
+                }
+            }
+        }
+    }
+
+    public class StudentEntry
+    {
+        public long Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public float AmountOwed { get; set; }
+
+        public StudentEntry(long Id, string FirstName, string LastName, float AmountOwed)
+        {
+            this.Id = Id;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.AmountOwed = AmountOwed;
         }
     }
 }

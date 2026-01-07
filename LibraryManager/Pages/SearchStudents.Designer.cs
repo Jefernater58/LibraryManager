@@ -30,13 +30,13 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            sideBar1 = new CustomControls.SideBar();
+            sideBar1 = new LibraryManager.CustomControls.SideBar();
             searchTextBox = new CustomTextBox();
             searchButton = new Button();
             dataGrid = new DataGridView();
             StudentID = new DataGridViewTextBoxColumn();
             StudentName = new DataGridViewTextBoxColumn();
-            StudentYearGroup = new DataGridViewTextBoxColumn();
+            amountOwed = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGrid).BeginInit();
             SuspendLayout();
             // 
@@ -76,6 +76,7 @@
             searchButton.TabIndex = 3;
             searchButton.Text = "SEARCH";
             searchButton.UseVisualStyleBackColor = false;
+            searchButton.Click += searchButton_Click;
             // 
             // dataGrid
             // 
@@ -95,7 +96,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGrid.Columns.AddRange(new DataGridViewColumn[] { StudentID, StudentName, StudentYearGroup });
+            dataGrid.Columns.AddRange(new DataGridViewColumn[] { StudentID, StudentName, amountOwed });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(230, 233, 239);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -129,12 +130,12 @@
             StudentName.Resizable = DataGridViewTriState.False;
             StudentName.Width = 370;
             // 
-            // StudentYearGroup
+            // amountOwed
             // 
-            StudentYearGroup.HeaderText = "Year Group";
-            StudentYearGroup.Name = "StudentYearGroup";
-            StudentYearGroup.ReadOnly = true;
-            StudentYearGroup.Resizable = DataGridViewTriState.False;
+            amountOwed.HeaderText = "Overdue Fee";
+            amountOwed.Name = "amountOwed";
+            amountOwed.ReadOnly = true;
+            amountOwed.Resizable = DataGridViewTriState.False;
             // 
             // SearchStudents
             // 
@@ -159,6 +160,6 @@
         private DataGridView dataGrid;
         private DataGridViewTextBoxColumn StudentID;
         private DataGridViewTextBoxColumn StudentName;
-        private DataGridViewTextBoxColumn StudentYearGroup;
+        private DataGridViewTextBoxColumn amountOwed;
     }
 }
