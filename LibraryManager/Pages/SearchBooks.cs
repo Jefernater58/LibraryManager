@@ -18,7 +18,7 @@ namespace LibraryManager.Pages
                 BookEntry entry = data[i];
 
                 // TODO: calculate average rating
-                dataGrid.Rows.Add(entry.Id, entry.Title, entry.Author, "nil", !entry.CheckedOut);
+                dataGrid.Rows.Add(entry.Id, entry.Title, entry.Author, "null", !entry.CheckedOut);
             }
         }
 
