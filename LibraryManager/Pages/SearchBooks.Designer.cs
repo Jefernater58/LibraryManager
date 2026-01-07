@@ -30,7 +30,7 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            sideBar1 = new CustomControls.SideBar();
+            sideBar1 = new LibraryManager.CustomControls.SideBar();
             dataGrid = new DataGridView();
             BookID = new DataGridViewTextBoxColumn();
             BookTitle = new DataGridViewTextBoxColumn();
@@ -143,6 +143,7 @@
             searchButton.TabIndex = 7;
             searchButton.Text = "SEARCH";
             searchButton.UseVisualStyleBackColor = false;
+            searchButton.Click += searchButton_Click;
             // 
             // searchTextBox
             // 

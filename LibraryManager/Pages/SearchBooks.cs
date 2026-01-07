@@ -20,8 +20,6 @@ namespace LibraryManager.Pages
                 // TODO: calculate average rating
                 dataGrid.Rows.Add(entry.Id, entry.Title, entry.Author, "nil", !entry.CheckedOut);
             }
-
-            // TODO: make search function work
         }
 
         BookEntry[] loadData()
@@ -46,7 +44,11 @@ namespace LibraryManager.Pages
                 {
                     while (reader.Read())
                     {
-                        list.Add(new BookEntry(reader.GetInt64(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetBoolean(4)));
+                        list.Add(new BookEntry(reader.GetInt64(0),
+                                               reader.GetString(1),
+                                               reader.GetString(2),
+                                               reader.GetString(3),
+                                               reader.GetBoolean(4)));
                     }
 
                     allRecords = list.ToArray();
@@ -54,6 +56,22 @@ namespace LibraryManager.Pages
 
                 // return the data
                 return allRecords;
+            }
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            string query = searchTextBox.TextBoxText;
+            BookEntry[] data = loadData();
+
+            dataGrid.Rows.Clear();
+            for (int i = 0; i < data.Length; i++)
+            {
+                BookEntry entry = data[i];
+                if (query == "" || entry.Title.ToLower().Contains(query.ToLower()) || entry.Author.ToLower().Contains(query.ToLower()))
+                {
+                    dataGrid.Rows.Add(entry.Id, entry.Title, entry.Author, "nil", !entry.CheckedOut);
+                }
             }
         }
     }
